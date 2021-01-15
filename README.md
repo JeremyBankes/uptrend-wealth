@@ -9,7 +9,7 @@ Orchestrator & Backend Developer:
 Frontend Developer:
  * Kevin Orenday
 
-Database Developer & Managemers
+Database Developer & Managers
  * Cherish Browne
  * Jamie Lu
 
