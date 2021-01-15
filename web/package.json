@@ -1,0 +1,32 @@
+{
+  "name": "uptrend",
+  "version": "1.0.0",
+  "description": "A simple, down-to-earth forex hedge fund.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremyBankes/uptrend-wealth.git"
+  },
+  "keywords": [
+    "Hedge",
+    "Fund",
+    "Forex",
+    "Invest",
+    "Currencies",
+    "Trading"
+  ],
+  "author": "Jeremy Bankes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeremyBankes/uptrend-wealth/issues"
+  },
+  "homepage": "https://github.com/JeremyBankes/uptrend-wealth#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "sqlite": "^4.0.19"
+  }
+}
