@@ -9,7 +9,6 @@ module.exports = (app) => {
     });
 
     app.get('/sandbox', (req, res) => {
-
         res.render('sandbox', {
             isLoggedIn: false,
             data: 'Hello World',
@@ -24,7 +23,10 @@ module.exports = (app) => {
                 'Taco'
             ]
         });
-
     });
 
-}
+    app.get('/', (req, res) => {
+        res.redirect('/landing');
+    });
+
+};
