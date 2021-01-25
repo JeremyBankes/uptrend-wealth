@@ -6,7 +6,7 @@ const app = express();
 
 app.engine('hbs', handlebars({
     layoutsDir: 'views',
-    partialsDir: 'views',
+    partialsDir: 'views/partials',
     defaultLayout: 'main',
     extname: '.hbs'
 }));
@@ -15,7 +15,8 @@ app.set('view engine', 'hbs');
 
 app.use(express.static('public'));
 
-require('./controllers/home')(app);
+require('./controllers/landing')(app);
+require('./controllers/user')(app);
 
 app.listen(configuration.port, () => {
     console.log(`Server now listening on port ${configuration.port}`);
