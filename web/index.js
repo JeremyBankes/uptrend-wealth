@@ -1,10 +1,12 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const configuration = require('./configuration');
+const helpers = require("./helpers/utilities");
 
 const app = express();
 
 app.engine('hbs', handlebars({
+    helpers: helpers,
     layoutsDir: 'views',
     partialsDir: 'views/partials',
     defaultLayout: 'main',
