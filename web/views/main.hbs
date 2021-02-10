@@ -15,12 +15,16 @@
     {{/each}}
 </head>
 
-<body class="vh-100">
-    <div id="app">
+<body>
+    <div id="app" class="min-vh-100">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    Uptrend Wealth
+                {{!-- Logo and icon made with LogoMakr.com
+                    Logo (with brand name) - logomakr.com/9gzg6o
+                    Icon - logomakr.com/2utCB6
+                --}}
+                    <img class="img-fluid navbar-brand-logo" src="/images/uptrend-wealth-logo.png" alt="Uptrend Wealth">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -32,7 +36,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/landing">Landing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -52,10 +64,40 @@
         {{{body}}}
     </div>
 
-    <footer class="footer mt-5">
-        <div class="d-flex justify-content-center">
-            <span>Uptrend Wealth &#169; 2021</span>
+    {{!-- Footer layout inspired by GitHub's footer --}}
+    <footer class="footer mt-6">
+        <div class="container-xl">
+            <div class="d-flex flex-wrap my-4 justify-content-between">
+                <div class="col-12 col-lg-4 my-auto">
+                    <span class="h1">Uptrend Wealth</span>
+                </div>
+
+                <div class="col-3 pr-3">
+                    <ul class="list-style-none">
+                        <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
+                        <li class="footer-list-item"><a href="#">Terms of Service</a></li>
+                        <li class="footer-list-item"><a href="#">Contact</a></li>
+                        <li class="footer-list-item"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-3 pr-3">
+                    <ul class="list-style-none">
+                        <li class="footer-list-item"><a href="mailto:contact@email.com">contact@email.com</a></li>
+                        <li class="footer-list-item"><a href="tel:+9021234567">(902)-123-4567</a></li>
+                        <li class="footer-list-item"></li>
+                    </ul>
+                    
+                    <div class="d-flex">
+                        <a class="social-icon" href="https://www.fb.com"><i class="fab fa-facebook"></i></a>
+                        <a class="social-icon" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icon" href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <p class="text-center">&#169; Uptrend Wealth 2021</p>
     </footer>
 </body>
 
