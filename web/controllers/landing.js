@@ -12,6 +12,26 @@ module.exports = (app) => {
 
     });
 
+    app.get('/about', (req, res) => {
+        res.render('todo.hbs');
+    });
+
+    app.get('/contact', (req, res) => {
+        res.render('todo.hbs');
+    });
+
+    app.get('/faq', (req, res) => {
+        res.render('todo.hbs');
+    });
+
+    // THESE TWO SHALL BE HERE FOR NOW
+    app.get('/site-policy/privacy-policy', (req, res) => {
+        res.render('todo.hbs');
+    });
+    app.get('/site-policy/terms-of-service', (req, res) => {
+        res.render('todo.hbs');
+    });
+
     app.get('/sandbox', (req, res) => {
         res.render('sandbox', {
             isLoggedIn: false,
