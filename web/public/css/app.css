@@ -10914,7 +10914,7 @@ a.text-dark:focus {
 
 .navbar-brand-logo {
   display: inline-block;
-  max-height: 40px;
+  max-height: 30px;
   width: auto;
 }
 
@@ -10953,6 +10953,12 @@ a.text-dark:focus {
 .footer-brand:hover,
 .footer-brand:focus {
   text-decoration: none;
+}
+
+.footer-brand-icon {
+  display: inline-block;
+  max-height: 100px;
+  width: auto;
 }
 
 .list-style-none {
