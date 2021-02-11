@@ -30,6 +30,9 @@
   --danger: #e3342f;
   --light: #f8f9fa;
   --dark: #343a40;
+  --theme: #26408b;
+  /* #0aadff; */
+  /* #6acc14; */
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -10912,6 +10915,13 @@ a.text-dark:focus {
   }
 }
 
+.img-intro {
+  display: block;
+  height: 550px;
+  width: 100%;
+  max-width: 1980px;
+}
+
 .navbar-brand-logo {
   display: inline-block;
   max-height: 30px;
@@ -10926,7 +10936,7 @@ a.text-dark:focus {
   width: 100%;
   padding: 0.5rem 0.3rem !important;
   border-width: thin;
-  box-shadow: 0 -4px 3px black;
+  box-shadow: 0 -4px 3px var(--theme);
 }
 
 .footer-link {
@@ -10961,6 +10971,17 @@ a.text-dark:focus {
   width: auto;
 }
 
+.icon-container {
+  display: inline-block;
+}
+
+@media (max-width: 576px) {
+  .icon-container {
+    display: none !important;
+    visibility: collapse !important;
+  }
+}
+
 .list-style-none {
   list-style: none;
   list-style-type: none;
@@ -10969,11 +10990,11 @@ a.text-dark:focus {
 
 .col-mid {
   border-width: thin;
-  box-shadow: -4px 0px 3px black;
+  box-shadow: -4px 0px 3px var(--theme);
 }
 
 .social-icon {
-  color: black;
+  color: var(--theme);
   font-size: xx-large;
   padding-right: 1rem;
 }
