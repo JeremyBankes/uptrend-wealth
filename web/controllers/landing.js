@@ -13,7 +13,7 @@ module.exports = (app) => {
     });
 
     app.get('/about', (req, res) => {
-        res.render('todo.hbs');
+        res.render('about.hbs');
     });
 
     app.get('/contact', (req, res) => {
