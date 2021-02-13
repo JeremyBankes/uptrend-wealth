@@ -10998,3 +10998,23 @@ a.text-dark:focus {
   font-size: xx-large;
   padding-right: 1rem;
 }
+
+.inline-p-img {
+  display: flex !important;
+}
+
+.inline-img {
+  display: inline !important;
+}
+
+@media (max-width: 768px) {
+  .inline-p-img {
+    display: block !important;
+  }
+
+  .inline-img {
+    display: block !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
