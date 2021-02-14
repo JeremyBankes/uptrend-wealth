@@ -17,11 +17,11 @@ module.exports = (app) => {
     });
 
     app.get('/contact', (req, res) => {
-        res.render('todo.hbs');
+        res.render('contact.hbs');
     });
 
     app.get('/faq', (req, res) => {
-        res.render('todo.hbs');
+        res.render('faq.hbs');
     });
 
     // THESE TWO SHALL BE HERE FOR NOW
