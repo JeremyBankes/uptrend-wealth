@@ -20,9 +20,12 @@ app.use(express.static('public'));
 require('./controllers/landing')(app);
 require('./controllers/user')(app);
 
-// app.listen(configuration.port, () => {
-//     console.log(`Server now listening on port ${configuration.port}`);
-// });
-app.listen(8080, () => {
-    console.log(`Server now listening on port 8080.`);
+const user = require('./models/user');
+
+const newUser = user.create(3, 'Jeremy', 'Bankes', '100 Water Street, Pugwash, Nova Scotia, Canada', '902-809-7323', new Date(), null, 0);
+
+newUser.create();
+
+app.listen(configuration.port, () => {
+    console.log(`Server now listening on port ${configuration.port}`);
 });
