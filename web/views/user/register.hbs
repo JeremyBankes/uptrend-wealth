@@ -1,7 +1,7 @@
-{{!-- 
-    Modified Bootstrap Registration Page by vosidiy
-    Source: https://bootsnipp.com/snippets/z8699
- --}}
+{{!--
+Modified Bootstrap Registration Page by vosidiy
+Source: https://bootsnipp.com/snippets/z8699
+--}}
 
 <div class="container">
     <div class="row justify-content-center h-100">
@@ -12,6 +12,7 @@
             <div class="card mt-3">
                 <div class="card-body">
                     <form action="/user/create" method="post">
+                        <h5>Credentials</h5>
                         <div class="form-group input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
@@ -39,21 +40,8 @@
                                 <option value="2">+198</option>
                                 <option value="3">+701</option>
                             </select>
-                            
+
                             <input name="" class="form-control" placeholder="Phone number" type="text">
-                        </div>
-
-                        <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-                            </div>
-
-                            <select class="form-control">
-                                <option selected=""> Select job type</option>
-                                <option>Designer</option>
-                                <option>Manager</option>
-                                <option>Accounting</option>
-                            </select>
                         </div>
 
                         <div class="form-group input-group">
@@ -72,11 +60,52 @@
                             <input class="form-control" placeholder="Repeat password" type="password">
                         </div>
 
+                        <hr>
+
+                        <h5>Address</h5>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-map-marked-alt"></i> </span>
+                            </div>
+                            <input class="form-control" placeholder="1234 Main St" type="text">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-sm">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fas fa-city"></i> </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="inputCity" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fas fa-map-marked-alt"></i> </span>
+                                    </div>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>State</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fas fa-mail-bulk"></i> </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="ZIP Code">
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">Create Account</button>
                         </div>
                     </form>
                 </div>
+
 
                 <div class="card-footer">
                     <p class="text-center">Have an account? <a href="/login">Login</a> </p>

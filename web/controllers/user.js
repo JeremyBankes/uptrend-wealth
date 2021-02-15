@@ -22,6 +22,7 @@ module.exports = (app) => {
     });
 
     app.post('/user/create', (req, res) => {
+        console.log(req.body);
         res.render('todo.hbs');
     });
 
