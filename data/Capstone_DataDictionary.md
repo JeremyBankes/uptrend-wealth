@@ -24,7 +24,7 @@ Contains data about the user
 |        |RegistrationDate  |TIMESTAMP |      |NOT NULL     |              |stores the date and time of when the user registered  |`19021234567`     |
 |        |UnregistrationDate|TIMESTAMP |      |NULL         |              |stores the date and time of when the user unregistered|`19021234567`     |
 
-####Role Table
+#### Role Table
 Contains data about the staff
 
 |Key     |Name          |Type    |Size  |NULL/NOT NULL|Default       |Description                     |Sample            |
@@ -40,7 +40,7 @@ Contains data about the tickets generated
 |**PK** **FK** |UserUserID |INT  |     |NOT NULL     |IDENTITY  |references which user has the role     |`1234567`            |
 |**PK** **FK** |RoleRoleID |INT  |     |NOT NULL     |          |references what role the user has      |`1234567`            |
 
-####UserRole Table
+#### UserRole Table
 Contains data about the tickets generated
 
 |Key     |Name             |Type    |Size  |NULL/NOT NULL|Default   |Description                                              |Sample               |
@@ -55,7 +55,7 @@ Contains data about the tickets generated
 |**FK**  |TicketCategoryID |INT     |11    |NOT NULL     |          |references which category the ticket belongs to          |`1234567`            |
 
 
-####TicketCategory
+#### TicketCategory
 Contains data on the different categories of tickets
 
 |Key     |Name               |Type    |Size  |NULL/NOT NULL|Default    |Description                                     |Sample                           |
@@ -65,7 +65,7 @@ Contains data on the different categories of tickets
 |-       |CategoryDescription|VARCHAR |255   |NOT NULL     |           |stores information on the ticket category       |problem with the physical aspects|
 
 
-####Comment
+#### Comment
 Contains the thread between the user and the staff member, if any.
 
 
@@ -79,7 +79,7 @@ Contains the thread between the user and the staff member, if any.
 |**FK**  |TicketID           |INT     |11    |NOT NULL     |             |references which ticket the comment belongs to  |`1234567`                                   |
 
 
-####Task
+#### Task
 Contains what task needs to be done to resolve the ticket
 
 |Key     |Name               |Type    |Size  |NULL/NOT NULL|Default      |Description                                     |Sample                                      |
@@ -92,7 +92,7 @@ Contains what task needs to be done to resolve the ticket
 |**FK**  |StaffID            |INT     |11    |    NULL     |             |references which staff is assigned to the task  |`1234567`                                   |
 
 
-####Hardware
+#### Hardware
 Contains the information on a specific hardware that can be used to resolve a ticket
 
 |Key     |Name                |Type      |Size  |NULL/NOT NULL|Default    |Description                                |Sample             |
@@ -105,7 +105,7 @@ Contains the information on a specific hardware that can be used to resolve a ti
 
 
 
-####HardwareTicket
+#### HardwareTicket
 References the many to many relationship between Ticket and Hardware
 
 |Key            |Name               |Type      |Size  |NULL/NOT NULL|Default   |Description                                                |Sample                             |
