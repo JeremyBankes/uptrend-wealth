@@ -1,4 +1,4 @@
-##Uptrend Wealth Database
+#Uptrend Wealth Database
 ####Data Dictionary
 
 Uptrend Wealth is a Forex hedge fund. 
