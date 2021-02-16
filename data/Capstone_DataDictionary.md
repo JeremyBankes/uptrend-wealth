@@ -1,5 +1,5 @@
-##Uptrend Wealth Database
-####Data Dictionary
+## Uptrend Wealth Database
+#### Data Dictionary
 
 Uptrend Wealth is a Forex hedge fund. 
 Essentially allowing for clients to make investments towards a fund that will be used 
@@ -11,7 +11,7 @@ making of secure payments and access to a portal for the observation of investme
 This process will include the design and development of a database, front-facing website,
 and backend service to link the two together.
 
-####User Table
+#### User Table
 Contains data about the user
 
 |Key     |Name              |Type      |Size  |NULL/NOT NULL|Default       |Description                                           |Sample            |
@@ -32,7 +32,7 @@ Contains data about the staff
 |**PK**  |RoleID        |INT     |      |NOT NULL     |IDENTITY      |_A unique sequential number_    |`1234567`         |
 |        |RoleName      |VARCHAR |32    |NOT NULL     |              |stores the staff's first name   |John              |
 
-####UserRole Table
+#### UserRole Table
 Contains data about the tickets generated
 
 |Key           |Name       |Type |Size |NULL/NOT NULL|Default   |Description                            |Sample               |
