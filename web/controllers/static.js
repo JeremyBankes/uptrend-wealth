@@ -13,39 +13,24 @@ module.exports = (app) => {
     });
 
     app.get('/about', (req, res) => {
-        res.render('about.hbs');
+        res.render('info/about.hbs');
     });
 
     app.get('/contact', (req, res) => {
-        res.render('contact.hbs');
+        res.render('info/contact.hbs');
     });
 
     app.get('/faq', (req, res) => {
-        res.render('faq.hbs');
+        res.render('info/faq.hbs');
     });
 
     // THESE TWO SHALL BE HERE FOR NOW
     app.get('/site-policy/privacy-policy', (req, res) => {
         res.render('todo.hbs');
     });
+
     app.get('/site-policy/terms-of-service', (req, res) => {
         res.render('todo.hbs');
     });
 
-    app.get('/sandbox', (req, res) => {
-        res.render('sandbox', {
-            isLoggedIn: false,
-            data: 'Hello World',
-            book: {
-                title: 'The King',
-                pages: 120
-            },
-            foods: [
-                'Hamburger',
-                'Hotdog',
-                'Pizza',
-                'Taco'
-            ]
-        });
-    });
 };

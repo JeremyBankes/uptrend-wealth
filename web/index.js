@@ -18,7 +18,7 @@ app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-require('./controllers/landing')(app);
+require('./controllers/static')(app);
 require('./controllers/user')(app);
 
 app.listen(configuration.port, () => {
