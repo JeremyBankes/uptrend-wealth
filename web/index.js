@@ -20,6 +20,9 @@ app.use(express.static('public'));
 
 require('./controllers/static')(app);
 require('./controllers/user')(app);
+require('./controllers/trade')(app);
+require('./controllers/fund')(app);
+app.get('*', (req, res) => { res.render('404.hbs'); });
 
 app.listen(configuration.port, () => {
     console.log(`Server now listening on port ${configuration.port}`);
