@@ -1,4 +1,3 @@
-
 module.exports = (app) => {
 
     app.get('/trade/*', (req, res) => {
