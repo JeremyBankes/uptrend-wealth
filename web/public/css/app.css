@@ -11069,3 +11069,13 @@ a.text-dark:focus {
 .theme-shadow-sm {
   box-shadow: 0 0.125rem 0.25rem var(--theme) !important;
 }
+
+.theme-fg {
+  color: var(--theme);
+}
+
+.theme-border {
+  border: 1px solid var(--theme);
+  border-left: transparent;
+  border-right: transparent;
+}
