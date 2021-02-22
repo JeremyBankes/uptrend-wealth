@@ -34,7 +34,7 @@ CREATE TABLE Address (
 DROP TABLE IF EXISTS Country;
 CREATE TABLE Country (
     CountryID int(11) NOT NULL AUTO_INCREMENT,
-    Name varchar(255) NOT NULL,
+    CountryName varchar(128) NOT NULL,
     PRIMARY KEY (CountryID)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE Trade (
     CurrencyPair varchar(6) NOT NULL,
     EntryPrice decimal(19, 0) NOT NULL,
     EntryDateTime timestamp NOT NULL,
-    ExitPrice int(11) NOT NULL,
+    ExitPrice decimal(19,0) NOT NULL,
     ExitDateTime timestamp NOT NULL,
     TradeDirection tinyint(1) NOT NULL,
     InitialStopPrice decimal(19, 0) NOT NULL,
@@ -90,8 +90,7 @@ CREATE TABLE `User` (
     UserID int(11) NOT NULL AUTO_INCREMENT,
     FirstName varchar(64) NOT NULL,
     LastName varchar(64) NOT NULL,
-    Address varchar(255) NOT NULL,
-    PhoneNumber varchar(64) NOT NULL,
+    PhoneNumber varchar(32) NOT NULL,
     EmailAddress varchar(255) NOT NULL,
     RegistrationDate timestamp NOT NULL,
     UnregistrationDate timestamp NOT NULL,
