@@ -1,6 +1,6 @@
 const mariadb = require('mariadb');
 
-const pool = mariadb.createPool({ host: "192.168.219.8", user: "root", password: "secret", connectionLimit: 1 });
+const pool = mariadb.createPool({ host: "2.tcp.ngrok.io", port: 17343, user: "admin", password: "secret", database: "Uptrend_Wealth", connectionLimit: 1 });
 
 pool.getConnection().then(connection => {
     connection.query("SHOW DATABASES;").then(rows => {
