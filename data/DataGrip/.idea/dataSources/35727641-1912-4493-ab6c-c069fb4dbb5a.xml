@@ -1055,12 +1055,12 @@
     <table id="341" parent="2" name="User"/>
     <table id="342" parent="2" name="UserRole"/>
     <routine id="343" parent="2" name="CreateAddress">
-      <SourceTextLength>155</SourceTextLength>
+      <SourceTextLength>193</SourceTextLength>
       <Definer>admin@%</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
     <routine id="344" parent="2" name="CreateUser">
-      <SourceTextLength>176</SourceTextLength>
+      <SourceTextLength>211</SourceTextLength>
       <Definer>admin@%</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
@@ -1079,21 +1079,21 @@
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="348" parent="333" name="StreetAddress">
+    <column id="348" parent="333" name="Id">
       <Position>1</Position>
-      <DataType>varchar(256)|0s</DataType>
+      <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="349" parent="333" name="Subdivision">
+    <column id="349" parent="333" name="StreetAddress">
       <Position>2</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="350" parent="333" name="Id">
+    <column id="350" parent="333" name="Subdivision">
       <Position>3</Position>
-      <DataType>int(10)|0s</DataType>
+      <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="351" parent="333" name="City">
       <Position>4</Position>
@@ -1452,32 +1452,42 @@ RoleId</ColNames>
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="424" parent="344" name="FirstName">
+    <argument id="424" parent="343" name="AddressId">
+      <Position>6</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0s</DataType>
+    </argument>
+    <argument id="425" parent="344" name="FirstName">
       <Position>1</Position>
       <DataType>varchar(128)|0s</DataType>
     </argument>
-    <argument id="425" parent="344" name="LastName">
+    <argument id="426" parent="344" name="LastName">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
     </argument>
-    <argument id="426" parent="344" name="Email">
+    <argument id="427" parent="344" name="Email">
       <Position>3</Position>
       <DataType>varchar(256)|0s</DataType>
     </argument>
-    <argument id="427" parent="344" name="Hash">
+    <argument id="428" parent="344" name="Hash">
       <Position>4</Position>
       <DataType>binary(72)|0s</DataType>
     </argument>
-    <argument id="428" parent="344" name="Phone">
+    <argument id="429" parent="344" name="Phone">
       <Position>5</Position>
       <DataType>varchar(64)|0s</DataType>
     </argument>
-    <argument id="429" parent="344" name="Registration">
+    <argument id="430" parent="344" name="Registration">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
     </argument>
-    <argument id="430" parent="344" name="AddressId">
+    <argument id="431" parent="344" name="AddressId">
       <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+    </argument>
+    <argument id="432" parent="344" name="UserId">
+      <Position>8</Position>
+      <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
   </database-model>

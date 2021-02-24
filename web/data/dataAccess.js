@@ -1,11 +1,21 @@
 const mariadb = require('mariadb');
+const configuration = require('../configuration');
+const pool = mariadb.createPool({
+    host: configuration.database_host,
+    port: configuration.database_port,
+    user: configuration.database_user,
+    password: configuration.database_password,
+    database: configuration.database_name,
+    multipleStatements: true,
+    connectionLimit: 10
+});
 
-const pool = mariadb.createPool({ host: "2.tcp.ngrok.io", port: 17343, user: "admin", password: "secret", database: "Uptrend_Wealth", connectionLimit: 1 });
-
-pool.getConnection().then(connection => {
-    connection.query("SHOW DATABASES;").then(rows => {
-        console.log(rows);
-    });
+pool.getConnection().then(conn => {
+    console.log(`Successful connection to "${configuration.database_name}" database at ${configuration.database_host}:${configuration.database_port} as ${configuration.database_user}.`);
+    conn.release();
 }).catch(error => {
-    console.log(error);
-})
+    console.log(`Failed to connect "${configuration.database_name}" database at ${configuration.database_host}:${configuration.database_port} as ${configuration.database_user}.`);
+    console.log(error.message);
+});
+
+module.exports = pool;

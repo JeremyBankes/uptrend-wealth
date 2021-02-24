@@ -1,3 +1,9 @@
 {
+    "database_host": "2.tcp.ngrok.io",
+    "database_port": 17343,
+    "database_user": "admin",
+    "database_password": "secret",
+    "database_name": "Uptrend",
+    "password_hash_salt_rounds": 10,
     "port": 8080
 }
