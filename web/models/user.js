@@ -15,14 +15,25 @@ class User {
         this.addressId = addressId;
     }
 
-    static create(firstName, lastName, email, password, phone, streetAddress, subdivision, city, zipCode, countryId) {
-        try {
-            const addressId = await dataAccess.createAddress(streetAddress, subdivision, city, zipCode, countryId);
-            const userId = await dataAccess.createUser(firstName, lastName, email, password, phone, addressId);
-            return userId;
-        } catch (error) {
-            throw error;
-        }
+    async static create(firstName, lastName, email, password, phone, addressId) {
+        const id = await dataAccess.create(firstName, lastName, email, password, phone, addressId);
+        return this.read(id);
+    }
+
+    async static read(id) {
+        const data = await dataAccess.read(id);
+        return new User(
+            data['Id'],
+            data['FirstName'],
+            data['LastName'],
+            data['Email'],
+            data['Hash'],
+            data['Phone'],
+            data['Registration'],
+            data['Unregistration'],
+            data['AccountId'],
+            data['AddressId']
+        );
     }
 
 }

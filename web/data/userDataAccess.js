@@ -42,6 +42,24 @@ async function create(firstName, lastName, email, password, phone, addressId) {
     // });
 }
 
+// Retrieves a user based on any one of the parameters (only one is required)
+async function read(id, email) {
+    const connection = await dataAccess.getConnection();
+    try {
+        let result;
+        if (id) {
+            result = await connection.query('SELECT * FROM User WHERE Id = ?;', [id]);
+        } else if (email) {
+            result = await connection.query('SELECT * FROM User WHERE Email = ?;', [email]);
+        } else {
+            throw 'no valid read parameters specified';
+        }
+        return result[0];
+    } finally {
+        connection.release();
+    }
+}
+
 module.exports = {
-    create
+    create, read
 }

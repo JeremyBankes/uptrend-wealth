@@ -4,12 +4,12 @@
 
 // console.log(id);
 
-const AddressModel = require('./models/address');
+// const AddressModel = require('./models/address');
 
-let address = new AddressModel(0, '105 Sheep Street', 'British Columbia', 'Closehaggen', '1F6 Z4B', 33);
+// let address = new AddressModel(0, '105 Sheep Street', 'British Columbia', 'Closehaggen', '1F6 Z4B', 33);
 
-address.create().then(id => {
-    console.log('Created new address:', id);
-}).catch(error => {
-    console.log(error);
-});
+// address.create().then(id => {
+//     console.log('Created new address:', id);
+// }).catch(error => {
+//     console.log(error);
+// });

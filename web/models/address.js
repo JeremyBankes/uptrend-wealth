@@ -11,8 +11,9 @@ class Address {
         this.countryId = countryId;
     }
 
-    async create() {
-        return await dataAccess.create(this.streetAddress, this.subdivision, this.city, this.zipCode, this.countryId);
+    async static create(streetAddress, subdivision, city, zipCode, countryId) {
+        const id = await dataAccess.create(streetAddress, subdivision, city, zipCode, countryId);
+        return new Address(id, streetAddress, subdivision, city, zipCode, countryId);
     }
 
 }

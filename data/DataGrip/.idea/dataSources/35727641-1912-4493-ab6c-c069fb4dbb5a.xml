@@ -1064,431 +1064,444 @@
       <Definer>admin@%</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <column id="345" parent="332" name="Id">
+    <routine id="345" parent="2" name="ReadUser">
+      <SourceTextLength>196</SourceTextLength>
+      <Definer>admin@%</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="346" parent="332" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="346" parent="332" name="CloseDate">
+    <column id="347" parent="332" name="CloseDate">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <key id="347" parent="332" name="PRIMARY">
+    <key id="348" parent="332" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="348" parent="333" name="Id">
+    <column id="349" parent="333" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="349" parent="333" name="StreetAddress">
+    <column id="350" parent="333" name="StreetAddress">
       <Position>2</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="350" parent="333" name="Subdivision">
+    <column id="351" parent="333" name="Subdivision">
       <Position>3</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="351" parent="333" name="City">
+    <column id="352" parent="333" name="City">
       <Position>4</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="352" parent="333" name="ZipCode">
+    <column id="353" parent="333" name="ZipCode">
       <Position>5</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="353" parent="333" name="CountryId">
+    <column id="354" parent="333" name="CountryId">
       <Position>6</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="354" parent="333" name="FK_Address_Country">
+    <index id="355" parent="333" name="FK_Address_Country">
       <ColNames>CountryId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="355" parent="333" name="PRIMARY">
+    <key id="356" parent="333" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="356" parent="333" name="FK_Address_Country">
+    <foreign-key id="357" parent="333" name="FK_Address_Country">
       <ColNames>CountryId</ColNames>
       <RefTableName>Country</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="357" parent="334" name="AccountId">
+    <column id="358" parent="334" name="AccountId">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="358" parent="334" name="TradeId">
+    <column id="359" parent="334" name="TradeId">
       <Position>2</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="359" parent="334" name="Ownership">
+    <column id="360" parent="334" name="Ownership">
       <Position>3</Position>
       <DataType>decimal(5,4 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="360" parent="334" name="FK_Claim_Trade">
+    <index id="361" parent="334" name="FK_Claim_Trade">
       <ColNames>TradeId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="361" parent="334" name="PRIMARY">
+    <key id="362" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AccountId
 TradeId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="362" parent="334" name="FK_Claim_Account">
+    <foreign-key id="363" parent="334" name="FK_Claim_Account">
       <ColNames>AccountId</ColNames>
       <RefTableName>Account</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <foreign-key id="363" parent="334" name="FK_Claim_Trade">
+    <foreign-key id="364" parent="334" name="FK_Claim_Trade">
       <ColNames>TradeId</ColNames>
       <RefTableName>Trade</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="364" parent="335" name="Id">
+    <column id="365" parent="335" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="365" parent="335" name="Name">
+    <column id="366" parent="335" name="Name">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="366" parent="335" name="PRIMARY">
+    <key id="367" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="367" parent="336" name="Id">
+    <column id="368" parent="336" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="368" parent="336" name="Name">
+    <column id="369" parent="336" name="Name">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="369" parent="336" name="PRIMARY">
+    <key id="370" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="370" parent="337" name="Id">
+    <column id="371" parent="337" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="371" parent="337" name="Name">
+    <column id="372" parent="337" name="Name">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="372" parent="337" name="PRIMARY">
+    <key id="373" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="373" parent="338" name="PermissionId">
+    <column id="374" parent="338" name="PermissionId">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="374" parent="338" name="RoleId">
+    <column id="375" parent="338" name="RoleId">
       <Position>2</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="375" parent="338" name="FK_RolePermissions_Role">
+    <index id="376" parent="338" name="FK_RolePermissions_Role">
       <ColNames>RoleId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="376" parent="338" name="PRIMARY">
+    <key id="377" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PermissionId
 RoleId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="377" parent="338" name="FK_RolePermissions_Permission">
+    <foreign-key id="378" parent="338" name="FK_RolePermissions_Permission">
       <ColNames>PermissionId</ColNames>
       <RefTableName>Permission</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <foreign-key id="378" parent="338" name="FK_RolePermissions_Role">
+    <foreign-key id="379" parent="338" name="FK_RolePermissions_Role">
       <ColNames>RoleId</ColNames>
       <RefTableName>Role</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="379" parent="339" name="Id">
+    <column id="380" parent="339" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="380" parent="339" name="Pair">
+    <column id="381" parent="339" name="Pair">
       <Position>2</Position>
       <DataType>char(6)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="381" parent="339" name="EntryPrice">
+    <column id="382" parent="339" name="EntryPrice">
       <Position>3</Position>
       <DataType>decimal(13,4 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="382" parent="339" name="EntryTime">
+    <column id="383" parent="339" name="EntryTime">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="383" parent="339" name="ExitPrice">
+    <column id="384" parent="339" name="ExitPrice">
       <Position>5</Position>
       <DataType>decimal(13,4 digit)|0s</DataType>
     </column>
-    <column id="384" parent="339" name="ExitTime">
+    <column id="385" parent="339" name="ExitTime">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="385" parent="339" name="Direction">
+    <column id="386" parent="339" name="Direction">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="386" parent="339" name="InitialStopPrice">
+    <column id="387" parent="339" name="InitialStopPrice">
       <Position>8</Position>
       <DataType>decimal(13,4 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="387" parent="339" name="PositionSize">
+    <column id="388" parent="339" name="PositionSize">
       <Position>9</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="388" parent="339" name="FundSize">
+    <column id="389" parent="339" name="FundSize">
       <Position>10</Position>
       <DataType>decimal(13,4 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="389" parent="339" name="Profit">
+    <column id="390" parent="339" name="Profit">
       <Position>11</Position>
       <DataType>decimal(13,4 digit)|0s</DataType>
     </column>
-    <key id="390" parent="339" name="PRIMARY">
+    <key id="391" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="391" parent="340" name="Id">
+    <column id="392" parent="340" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="392" parent="340" name="Amount">
+    <column id="393" parent="340" name="Amount">
       <Position>2</Position>
       <DataType>decimal(13,4 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="393" parent="340" name="AccountId">
+    <column id="394" parent="340" name="AccountId">
       <Position>3</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="394" parent="340" name="Time">
+    <column id="395" parent="340" name="Time">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="395" parent="340" name="FK_Transfer_Account">
+    <index id="396" parent="340" name="FK_Transfer_Account">
       <ColNames>AccountId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="396" parent="340" name="PRIMARY">
+    <key id="397" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="397" parent="340" name="FK_Transfer_Account">
+    <foreign-key id="398" parent="340" name="FK_Transfer_Account">
       <ColNames>AccountId</ColNames>
       <RefTableName>Account</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="398" parent="341" name="Id">
+    <column id="399" parent="341" name="Id">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="399" parent="341" name="FirstName">
+    <column id="400" parent="341" name="FirstName">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="400" parent="341" name="LastName">
+    <column id="401" parent="341" name="LastName">
       <Position>3</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="401" parent="341" name="Email">
+    <column id="402" parent="341" name="Email">
       <Position>4</Position>
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="402" parent="341" name="Hash">
+    <column id="403" parent="341" name="Hash">
       <Position>5</Position>
       <DataType>binary(72)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="403" parent="341" name="Phone">
+    <column id="404" parent="341" name="Phone">
       <Position>6</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="404" parent="341" name="Registration">
+    <column id="405" parent="341" name="Registration">
       <Position>7</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="405" parent="341" name="Unregistration">
+    <column id="406" parent="341" name="Unregistration">
       <Position>8</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <column id="406" parent="341" name="AccountId">
+    <column id="407" parent="341" name="AccountId">
       <Position>9</Position>
       <DataType>int(10)|0s</DataType>
     </column>
-    <column id="407" parent="341" name="AddressId">
+    <column id="408" parent="341" name="AddressId">
       <Position>10</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="408" parent="341" name="FK_User_Account">
+    <index id="409" parent="341" name="FK_User_Account">
       <ColNames>AccountId</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="409" parent="341" name="FK_User_Address">
+    <index id="410" parent="341" name="FK_User_Address">
       <ColNames>AddressId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="410" parent="341" name="PRIMARY">
+    <key id="411" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="411" parent="341" name="FK_User_Account">
+    <foreign-key id="412" parent="341" name="FK_User_Account">
       <ColNames>AccountId</ColNames>
       <RefTableName>Account</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <foreign-key id="412" parent="341" name="FK_User_Address">
+    <foreign-key id="413" parent="341" name="FK_User_Address">
       <ColNames>AddressId</ColNames>
       <RefTableName>Address</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <column id="413" parent="342" name="UserId">
+    <column id="414" parent="342" name="UserId">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="414" parent="342" name="RoleId">
+    <column id="415" parent="342" name="RoleId">
       <Position>2</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="415" parent="342" name="FK_UserRole_Role">
+    <index id="416" parent="342" name="FK_UserRole_Role">
       <ColNames>RoleId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="416" parent="342" name="PRIMARY">
+    <key id="417" parent="342" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UserId
 RoleId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="417" parent="342" name="FK_UserRole_User">
+    <foreign-key id="418" parent="342" name="FK_UserRole_User">
       <ColNames>UserId</ColNames>
       <RefTableName>User</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <foreign-key id="418" parent="342" name="FK_UserRole_Role">
+    <foreign-key id="419" parent="342" name="FK_UserRole_Role">
       <ColNames>RoleId</ColNames>
       <RefTableName>Role</RefTableName>
       <RefColNames>Id</RefColNames>
     </foreign-key>
-    <argument id="419" parent="343" name="StreetAddress">
+    <argument id="420" parent="343" name="StreetAddress">
       <Position>1</Position>
       <DataType>varchar(256)|0s</DataType>
     </argument>
-    <argument id="420" parent="343" name="Subdivision">
+    <argument id="421" parent="343" name="Subdivision">
       <Position>2</Position>
       <DataType>varchar(256)|0s</DataType>
     </argument>
-    <argument id="421" parent="343" name="City">
+    <argument id="422" parent="343" name="City">
       <Position>3</Position>
       <DataType>varchar(256)|0s</DataType>
     </argument>
-    <argument id="422" parent="343" name="ZipCode">
+    <argument id="423" parent="343" name="ZipCode">
       <Position>4</Position>
       <DataType>varchar(10)|0s</DataType>
     </argument>
-    <argument id="423" parent="343" name="CountryId">
+    <argument id="424" parent="343" name="CountryId">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="424" parent="343" name="AddressId">
+    <argument id="425" parent="343" name="AddressId">
       <Position>6</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="425" parent="344" name="FirstName">
+    <argument id="426" parent="344" name="FirstName">
       <Position>1</Position>
       <DataType>varchar(128)|0s</DataType>
     </argument>
-    <argument id="426" parent="344" name="LastName">
+    <argument id="427" parent="344" name="LastName">
       <Position>2</Position>
       <DataType>varchar(128)|0s</DataType>
     </argument>
-    <argument id="427" parent="344" name="Email">
+    <argument id="428" parent="344" name="Email">
       <Position>3</Position>
       <DataType>varchar(256)|0s</DataType>
     </argument>
-    <argument id="428" parent="344" name="Hash">
+    <argument id="429" parent="344" name="Hash">
       <Position>4</Position>
       <DataType>binary(72)|0s</DataType>
     </argument>
-    <argument id="429" parent="344" name="Phone">
+    <argument id="430" parent="344" name="Phone">
       <Position>5</Position>
       <DataType>varchar(64)|0s</DataType>
     </argument>
-    <argument id="430" parent="344" name="Registration">
+    <argument id="431" parent="344" name="Registration">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
     </argument>
-    <argument id="431" parent="344" name="AddressId">
+    <argument id="432" parent="344" name="AddressId">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="432" parent="344" name="UserId">
+    <argument id="433" parent="344" name="UserId">
       <Position>8</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
+    </argument>
+    <argument id="434" parent="345" name="Id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+    </argument>
+    <argument id="435" parent="345" name="Email">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
     </argument>
   </database-model>
 </dataSource>
