@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Country" type="DatabaseScript" singleton="false">
+    <script-file value="$PROJECT_DIR$/Country.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="35727641-1912-4493-ab6c-c069fb4dbb5a" namespace="schema/&quot;Uptrend&quot;" />
+    <method v="2" />
+  </configuration>
+</component>
