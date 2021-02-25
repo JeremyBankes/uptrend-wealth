@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/b4vtabs.min.css">
     <script src="/js/app.js"></script>
     {{#each scripts}}
     <script src="{{this}}"></script>
@@ -25,7 +26,7 @@
                         Logo (with brand name) - logomakr.com/9gzg6o
                         Logo (icon) - logomakr.com/8QWByM
                     --}}
-                    <img class="img-fluid navbar-brand-logo" src="/images/uptrend-wealth-logo.png" alt="Uptrend Wealth">
+                    <img class="img-fluid navbar-brand-logo" src="/images/uptrend-wealth-logo.png" alt="{{ _brand }}">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -66,7 +67,7 @@
     </div>
 
     {{!-- Footer layout inspired by GitHub's footer --}}
-    <footer class="footer mt-6">
+    <footer class="footer">
         <div class="container-xl overflow-auto">
             <div class="d-flex flex-wrap my-4 justify-content-between row-cols-4">
                 <div class="col-md-auto">
@@ -99,12 +100,12 @@
 
                 <div class="col-md-auto my-auto icon-container">
                     <div class="d-flex justify-content-center">
-                        <img class="img-fluid footer-brand-icon" src="/images/uptrend-wealth-icon.png" alt="Uptrend Wealth Logo">
+                        <img class="img-fluid footer-brand-icon" src="/images/uptrend-wealth-icon.png" alt="{{ _brand }} Logo">
                     </div>
                 </div>
             </div>
 
-            <p class="text-center">&#169; Uptrend Wealth 2021</p>
+            <p class="text-center">&#169; {{ _brand }} 2021</p>
         </div>
     </footer>
 </body>

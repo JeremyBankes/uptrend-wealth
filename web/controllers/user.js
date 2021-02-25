@@ -41,4 +41,9 @@ module.exports = (app) => {
         res.render('todo.hbs');
     });
 
+    // Testing route
+    app.get('/user/investment-status', (req, res) => {
+        res.render('user/investment-status.hbs');
+    });
+
 }

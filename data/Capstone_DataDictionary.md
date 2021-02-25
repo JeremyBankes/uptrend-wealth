@@ -12,34 +12,34 @@ This process will include the design and development of a database, front-facing
 and backend service to link the two together.
 
 #### User Table
-Contains data about the user
+A user describes a person who may have signed up on the website, but hasn't necessarily (but could have) made a contribution to the fund (an investment).
 
-|Key     |Name              |Type      |Size  |NULL/NOT NULL|Default       |Description                                           |Sample            |
-|:------:|:----------------:|:--------:|:----:|:-----------:|:------------:|:----------------------------------------------------:|:----------------:|
-|**PK**  |UserID            |INT       |      |NOT NULL     |IDENTITY      |_A unique sequential number_                          |`1234567`         |
-|**DF**  |FirstName         |VARCHAR   |64    |NOT NULL     |              |stores the user's first name                          |Jane              |
-|-       |LastName          |VARCHAR   |64    |NOT NULL     |              |stores the user's last name                           |Doe               |
-|**CK**  |PhoneNumber       |VARCHAR   |32    |NOT NULL     |              |stores the user's contact number                      |`19021234567`     |
-|        |EmailAddress      |VARCHAR   |255   |NOT NULL     |              |stores the user's email address                       |janedoe@gmail.com |
-|        |RegistrationDate  |TIMESTAMP |      |NOT NULL     |              |stores the date and time of when the user registered  |`19021234567`     |
-|        |UnregistrationDate|TIMESTAMP |      |NULL         |              |stores the date and time of when the user unregistered|`19021234567`     |
-|        |Hash              |BLOB      |      |NULL         |              |stores the user's password                            |                  |
+|Key     |Name              |Type      |Size  |NULL/NOT NULL|Default       |Description                                           |Sample                              |
+|:------:|:----------------:|:--------:|:----:|:-----------:|:------------:|:----------------------------------------------------:|:----------------------------------:|
+|**PK**  |UserID            |INT       |      |NOT NULL     |IDENTITY      |_A unique sequential number_                          |`1002`                              |
+|**DF**  |FirstName         |VARCHAR   |64    |NOT NULL     |              |stores the user's first name                          |Jane                                |
+|        |LastName          |VARCHAR   |64    |NOT NULL     |              |stores the user's last name                           |Doe                                 |
+|**CK**  |PhoneNumber       |VARCHAR   |32    |NOT NULL     |              |stores the user's contact number                      |`19021234567`                       |
+|        |EmailAddress      |VARCHAR   |255   |NOT NULL     |              |stores the user's email address                       |janedoe@gmail.com                   |
+|        |RegistrationDate  |DATETIME  |      |NOT NULL     |              |stores the date and time of when the user registered  |`2021-11-14 23:59:59`               |
+|        |UnregistrationDate|DATETIME  |      |NULL         |NULL          |stores the date and time of when the user unregistered|`2023-04-04 15:45:03`               |
+|        |Hash              |BLOB      |      |NULL         |              |stores the user's hashed password                     |`$2y$12$95aGTH/mFyc0a/Cpetjp16bXcUO`|
 
 #### Role Table
-Contains data about the staff
+Represents a collection of permissions allowing a user to take certain actions on the web interface. Roles can be given to or taken from users.
 
-|Key     |Name          |Type    |Size  |NULL/NOT NULL|Default       |Description                     |Sample          |
-|:------:|:------------:|:------:|:----:|:-----------:|:------------:|:------------------------------:|:--------------:|
-|**PK**  |RoleID        |INT     |      |NOT NULL     |IDENTITY      |_A unique sequential number_    |`1234567`       |
-|-       |RoleName      |VARCHAR |32    |NOT NULL     |              |stores the name of role         |Admin           |
+|Key     |Name          |Type    |Size  |NULL/NOT NULL|Default       |Description                     |Sample                                  |
+|:------:|:------------:|:------:|:----:|:-----------:|:------------:|:------------------------------:|:--------------------------------------:|
+|**PK**  |RoleID        |INT     |      |NOT NULL     |IDENTITY      |_A unique sequential number_    |`04`                                     |
+|-       |RoleName      |VARCHAR |32    |NOT NULL     |              |stores the name of role         |admin, moderator, developer, owner, etc.|
 
 #### User_Role Table
-Contains data about the tickets generated
+Composite table to join the User and Role tables
 
-|Key           |Name       |Type |Size |NULL/NOT NULL|Default   |Description                            |Sample        |
-|:------------:|:---------:|:---:|:---:|:-----------:|:--------:|:-------------------------------------:|:------------:|
-|**PK** **FK** |UserUserID |INT  |     |NOT NULL     |          |references which user has the role     |`1234567`     |
-|**PK** **FK** |RoleRoleID |INT  |     |NOT NULL     |          |references what role the user has      |`1234567`     |
+|Key           |Name   |Type |Size |NULL/NOT NULL|Default   |Description                            |Sample        |
+|:------------:|:-----:|:---:|:---:|:-----------:|:--------:|:-------------------------------------:|:------------:|
+|**PK** **FK** |UserID |INT  |     |NOT NULL     |          |references which user has the role     |`101`     |
+|**PK** **FK** |RoleID |INT  |     |NOT NULL     |          |references what role the user has      |`04`     |
 
 #### Permission Table
 Contains data on the different categories of tickets
@@ -50,80 +50,80 @@ Contains data on the different categories of tickets
 |-       |PermissionName |VARCHAR |32    |NOT NULL     |           |stores the name of permission   |website.user.delete   |
 
 #### Role_Permission Table
-Contains data about the tickets generated
+Composite table to join the Permission and Role tables
 
-|Key          |Name                  |Type    |Size  |NULL/NOT NULL|Default   |Description                                                      |Sample               |
-|:-----------:|:--------------------:|:------:|:----:|:-----------:|:--------:|:---------------------------------------------------------------:|:-------------------:|
-|**PK** **FK**|RoleRoleID            |INT     |11    |NOT NULL     |          |_A unique sequential number_ that references the role table      |`1234567`            |
-|**PK** **FK**|PermissionPermissionID|INT     |11    |NOT NULL     |          |_A unique sequential number_ that references the permission table|`1234567`            |
+|Key          |Name        |Type    |Size  |NULL/NOT NULL|Default   |Description                                                      |Sample               |
+|:-----------:|:----------:|:------:|:----:|:-----------:|:--------:|:---------------------------------------------------------------:|:-------------------:|
+|**PK** **FK**|RoleID      |INT     |11    |NOT NULL     |          |_A unique sequential number_ that references the role table      |`04`            |
+|**PK** **FK**|PermissionID|INT     |11    |NOT NULL     |          |_A unique sequential number_ that references the permission table|`1234567`            |
 
 #### Address Table
-Contains data on the different categories of tickets
+Represents an address
 
-|Key     |Name            |Type    |Size  |NULL/NOT NULL|Default    |Description                                   |Sample                   |
-|:------:|:--------------:|:------:|:----:|:-----------:|:---------:|:--------------------------------------------:|:-----------------------:|
-|**PK**  |AddressID       |INT     |11    |NOT NULL     |IDENTITY   |_A unique sequential number_                  |`1234567`                |
-|-       |StreetAddress   |VARCHAR |64    |NOT NULL     |           |stores the information on the street address  |123 Heavenly Lane        |
-|-       |State           |VARCHAR |32    |NOT NULL     |           |stores the name of the state                  |Nova Scotia              |
-|-       |City            |VARCHAR |255   |NOT NULL     |           |stores the name of the city                   |Halifax                  |
-|-       |Zipcode         |VARCHAR |32    |NOT NULL     |           |stores the zipcode                            |B2Z 1G3                  |
-|**FK**  |UserID          |INT     |      |NOT NULL     |           |references the User table                     |problem with the physical aspects|
-|**FK**  |CountryCountryID|INT     |      |NOT NULL     |           |references Country table                      |Hardware Issue                   |
+|Key     |Name            |Type    |Size  |NULL/NOT NULL|Default    |Description                                  |Sample               |
+|:------:|:-------------:|:------:|:----:|:-----------:|:---------:|:--------------------------------------------:|:-------------------:|
+|**PK**  |AddressID      |INT     |11    |NOT NULL     |IDENTITY   |_A unique sequential number_                  |`1234567`            |
+|-       |StreetAddress  |VARCHAR |64    |NOT NULL     |           |stores the information on the street address  |123 Heavenly Lane    |
+|-       |StateProvince  |VARCHAR |32    |NOT NULL     |           |stores the name of the state or province      |Nova Scotia          |
+|-       |City           |VARCHAR |255   |NOT NULL     |           |stores the name of the city, town or village  |Halifax              |
+|-       |Zipcode        |VARCHAR |32    |NOT NULL     |           |stores the zipcode or postal code             |B2Z 1G3              |
+|**FK**  |UserID         |INT     |      |NOT NULL     |           |references the User table                     |`105`                |
+|**FK**  |CountryID      |INT     |      |NOT NULL     |           |references Country table                      |`202`                |
 
 #### Country
-Contains the thread between the user and the staff member, if any.
+Represents a country
 
-|Key     |Name               |Type    |Size  |NULL/NOT NULL|Default      |Description                               |Sample                                      |
-|:------:|:-----------------:|:------:|:----:|:-----------:|:-----------:|:----------------------------------------:|:------------------------------------------:|
-|**PK**  |CountryID          |INT     |11    |NOT NULL     |IDENTITY     |_A unique sequential number_              |`1234567`                                   |
-|-       |CountryName        |VARCHAR |128   |NOT NULL     |             |stores the name of the country            |Canada                         |
+|Key     |Name               |Type    |Size  |NULL/NOT NULL|Default      |Description                               |Sample          |
+|:------:|:-----------------:|:------:|:----:|:-----------:|:-----------:|:----------------------------------------:|:--------------:|
+|**PK**  |CountryID          |INT     |11    |NOT NULL     |IDENTITY     |_A unique sequential number_              |`1234567`       |
+|-       |CountryName        |VARCHAR |128   |NOT NULL     |             |stores the name of the country            |Canada          |
 
 
 #### Account
-Contains what task needs to be done to resolve the ticket
+An account describes a user who has registered to be an investor.
 
-|Key     |Name               |Type     |Size  |NULL/NOT NULL|Default      |Description                                     |Sample                                      |
-|:------:|:-----------------:|:-------:|:----:|:-----------:|:-----------:|:----------------------------------------------:|:------------------------------------------:|
-|**PK**  |AccountID          |INT      |11    |NOT NULL     |IDENTITY     |_A unique sequential number_                    |`1234567`                                   |
-|-       |AccountCloseDate   |TIMESTAMP|      |NOT NULL     |             |stores the name of the task                     |Warranty Repair                             |
-|        |BalanceCALC        |DECIMAL  |      |NOT NULL     |             |describes the task that has to be done          |replace monitor and install it              |
-|-       |FundOwnershipCALC  |DECIMAL  |      |NOT NULL     |             |the date the comment entry is made              |`2019-07-11 04:27:07`                       |
-|**FK**  |UserID             |INT      |11    |NULL         |             |references which ticket the task belongs to         |`1234567`                               |
+|Key     |Name               |Type     |Size  |NULL/NOT NULL|Default      |Description                                         |Sample                           |
+|:------:|:-----------------:|:-------:|:----:|:-----------:|:-----------:|:--------------------------------------------------:|:-------------------------------:|
+|**PK**  |AccountID          |INT      |11    |NOT NULL     |IDENTITY     |_A unique sequential number_                        |`1234567`                        |
+|-       |AccountCloseDate   |DATETIME |      |NOT NULL     |             |represents the date and time of the account closing |`2023-04-04 15:45:03`            |
+|        |BalanceCALC        |DECIMAL  |      |NOT NULL     |             |                                                    |                                 |
+|-       |FundOwnershipCALC  |DECIMAL  |      |NOT NULL     |             |                                                    |`2019-07-11 04:27:07`            |
+|**FK**  |UserID             |INT      |11    |NULL         |             |used to reference and identify the User             |`1234567`                        |
 
 #### Trade
-Contains the information on a specific hardware that can be used to resolve a ticket
+Represent a trade (A entering and exiting a position on the Forex market).
 
-|Key     |Name                |Type      |Size  |NULL/NOT NULL|Default    |Description                                |Sample             |
-|:------:|:------------------:|:--------:|:----:|:-----------:|:---------:|:-----------------------------------------:|:-----------------:|
-|**PK**  |TradeID             |INT       |11    |NOT NULL     |IDENTITY   |_A unique sequential number_               |`1234567`          |
-|-       |CurrencyPair        |VARCHAR   |6     |NOT NULL     |           |stores the name of the item                |monitor            |
-|-       |EntryPrice          |DECIMAL   |19,0  |NOT NULL     |           |a short description of the item            |19in x 34in screen |
-|-       |EntryDateTime       |TIMESTAMP |      |NOT NULL     |           |stores the date the hardware was purchased |`50.25`            |
-|        |ExitPrice           |VARCHAR   |19,0  |NOT NULL     |           |stores the hardware's serial number        |AK07115477WQD      |      
-|-       |ExitDateTime        |TIMESTAMP |      |NOT NULL     |           |stores the name of the item                |monitor            |
-|-       |TradeDirection      |BIT       |      |NOT NULL     |           |a short description of the item            |19in x 34in screen |
-|-       |InitialStopPrice    |DECIMAL   |19,0  |NOT NULL     |           |stores the date the hardware was purchased |`50.25`            |
-|        |PositionSize        |INT       |11    |NOT NULL     |           |stores the hardware's serial number        |AK07115477WQD      |      
-|-       |FundSize            |DECIMAL   |      |NOT NULL     |           |a short description of the item            |19in x 34in screen |
-|-       |Profit              |DECIMAL   |19,0  |NOT NULL     |           |stores the date the hardware was purchased |`50.25`            |
-|        |Return              |FLOAT     |      |NOT NULL     |           |stores the hardware's serial number        |AK07115477WQD      |
+|Key     |Name                |Type      |Size  |NULL/NOT NULL|Default    |Description                                                    |Sample                           |
+|:------:|:------------------:|:--------:|:----:|:-----------:|:---------:|:-------------------------------------------------------------:|:-------------------------------:|
+|**PK**  |TradeID             |INT       |11    |NOT NULL     |IDENTITY   |_A unique sequential number_                                   |`1234567`                        |
+|-       |CurrencyPair        |VARCHAR   |6     |NOT NULL     |           |stores the currency pair the trade is using                    |USDCAD                           |
+|-       |EntryPrice          |DECIMAL   |13,4  |NOT NULL     |           |describes the price at which a trade is entered                |`43.4424`                        |
+|-       |EntryDateTime       |DATETIME  |      |NOT NULL     |           |represents the time at which a trade is entered                |`2023-04-04 15:45:03`            |
+|        |ExitPrice           |DECIMAL   |13,4  |NULL         |NULL       |represents the price at which a trade is exited                |`43.5523`                        |      
+|-       |ExitDateTime        |DATETIME  |      |NULL         |NULL       |represents the date and time at which a trade is exited        |`2023-04-05 11:35:05`            |
+|-       |TradeDirection      |BIT       |      |NOT NULL     |           |represents the direction a trade is meant to go                |true (for long, false for short) |
+|-       |InitialStopPrice    |DECIMAL   |13,4  |NOT NULL     |           |describes the initial price at which the stop loss is placed   |`40.3443`                        |
+|        |PositionSize        |INT       |11    |NOT NULL     |           |describes the size of a trade (units purchased)                |`123000`                         |      
+|-       |FundSize            |DECIMAL   |13,4  |NOT NULL     |           |represents the total size of the fund at the time of the trade |`75454.4364`                     |
+|-       |Profit              |DECIMAL   |13,4  |NULL         |NULL       |represents the total profit or loss made on this trade         |`-435.4343`                      |
+|-       |Return              |FLOAT     |      |NOT NULL     |           |                                                               |                                 |
 
 
 #### Account_Trade
-References the many to many relationship between Ticket and Hardware
+Composite table to join together the Account and Trade tables
 
 |Key            |Name               |Type      |Size  |NULL/NOT NULL|Default   |Description                                                   |Sample                             |
 |:-------------:|:-----------------:|:--------:|:----:|:-----------:|:--------:|:------------------------------------------------------------:|:---------------------------------:|
-|**PK** **FK**  |AccountAccountID   |INT       |11    |NOT NULL     |          |_A unique sequential number_ that references the account table|`1234567`                          |
-|**PK** **FK**  |TradeTradeID       |INT       |11    |NOT NULL     |          |_A unique sequential number_ that references the trade table  |`1234567`                          |
+|**PK** **FK**  |AccountID          |INT       |11    |NOT NULL     |          |_A unique sequential number_ that references the account table|`1234567`                          |
+|**PK** **FK**  |TradeID            |INT       |11    |NOT NULL     |          |_A unique sequential number_ that references the trade table  |`1234567`                          |
 |               |TradeContribution  |FLOAT     |      |NOT NULL     |          |                                                              |`1234567`                          |
 
 #### Transfer
 References the many to many relationship between Ticket and Hardware
 
-|Key    |Name            |Type      |Size  |NULL/NOT NULL|Default   |Description                                                   |Sample                             |
-|:-----:|:--------------:|:--------:|:----:|:-----------:|:--------:|:------------------------------------------------------------:|:---------------------------------:|
-|**PK** |TransferID      |INT       |11    |NOT NULL     |          |_A unique sequential number_ that references the account table|`1234567`                          |
-|       |Amount          |DECIMAL   |      |NOT NULL     |          |_A unique sequential number_ that references the trade table  |`1234567`                          |
-|       |TransferDateTime|TIMESTAMP |      |NOT NULL     |          |                                                              |`1234567`                          |
-|**FK** |AccountAccountID|INT       |11    |NOT NULL     |          |                                                              |`1234567`                          |
+|Key    |Name            |Type      |Size  |NULL/NOT NULL|Default   |Description                                                                                |Sample                                      |
+|:-----:|:--------------:|:--------:|:----:|:-----------:|:--------:|:-----------------------------------------------------------------------------------------:|:------------------------------------------:|
+|**PK** |TransferID      |INT       |11    |NOT NULL     |          |_A unique sequential number_ that references the ID of the transfer                        |`1134`                                      |
+|       |Amount          |DECIMAL   |13,4  |NOT NULL     |          |references the amount of money being transferred                                           |$5000 ((+) for deposits, (-) for withdraws) |
+|       |TransferDateTime|DATETIME  |      |NOT NULL     |          |refers to the date and time of the transfer                                                |`2023-04-05 11:35:05                        |
+|**FK** |AccountID       |INT       |11    |NOT NULL     |          |_A unique sequential number_ that references the ID of the account prompting the transfer  |`1005`                                      |
