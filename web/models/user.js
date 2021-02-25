@@ -15,12 +15,12 @@ class User {
         this.addressId = addressId;
     }
 
-    async static create(firstName, lastName, email, password, phone, addressId) {
+    static async create(firstName, lastName, email, password, phone, addressId) {
         const id = await dataAccess.create(firstName, lastName, email, password, phone, addressId);
         return this.read(id);
     }
 
-    async static read(id) {
+    static async read(id) {
         const data = await dataAccess.read(id);
         return new User(
             data['Id'],
