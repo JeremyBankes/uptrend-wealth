@@ -10916,7 +10916,8 @@ a.text-dark:focus {
 }
 
 .img-intro {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   height: 550px;
   width: 100%;
   max-width: 1980px;
@@ -11081,6 +11082,10 @@ a.text-dark:focus {
   color: var(--theme);
 }
 
+.theme-bg {
+  background-color: var(--theme);
+}
+
 .theme-border-y {
   border: 1px solid var(--theme);
   border-left: transparent;
@@ -11232,4 +11237,50 @@ a.text-dark:focus {
 a.btn-no-left-radius.disabled,
 fieldset:disabled a.btn-no-left-radius {
   pointer-events: none;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+hr.flaired-edges {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+  color: var(--theme);
+}
+hr.flaired-edges:before { /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+  color: var(--theme);
+}
+
+.paragraph {
+  min-width: 250px;
+}
+
+.quote-paragraph {
+  min-width: 170px;
+}
+
+@media (max-width: 471px) {
+  .unordered-list {
+    padding-left: inherit;
+  }
+}
+
+@media (max-width: 361px) {
+  .list-no-bullet {
+    padding-left: initial;
+  }
+}
+
+.input-group {
+  min-width: 127px;
 }
