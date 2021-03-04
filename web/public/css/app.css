@@ -11066,12 +11066,8 @@ a.text-dark:focus {
 
 .inline-img-2 {
   float: left;
-  width: 15%;
+  max-width: 100px;
   height: auto;
-}
-
-.inline-p-2 {
-  float: none;
 }
 
 .theme-shadow-sm {
@@ -11283,4 +11279,16 @@ hr.flaired-edges:before { /* Not really supposed to work, but does */
 
 .input-group {
   min-width: 127px;
+}
+
+.login-card {
+  min-width: 248px;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
 }
