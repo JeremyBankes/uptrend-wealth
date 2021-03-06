@@ -1786,7 +1786,7 @@ pre code {
 }
 
 .table thead th {
-  vertical-align: bottom;
+  vertical-align: middle;
   border-bottom: 2px solid #dee2e6;
 }
 
@@ -11309,3 +11309,6 @@ hr.flaired-edges:before { /* Not really supposed to work, but does */
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Changed 1789 line */
+
