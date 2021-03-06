@@ -11292,3 +11292,20 @@ hr.flaired-edges:before { /* Not really supposed to work, but does */
 .zoom:hover {
   transform: scale(1.1);
 }
+
+.scrollbar-progress-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  padding: 0;
+  z-index: 1;
+}
+
+.scrollbar-progress {
+  height: 5px;
+  background-color: var(--theme);
+  width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
