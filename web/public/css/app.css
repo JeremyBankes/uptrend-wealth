@@ -11082,6 +11082,10 @@ a.text-dark:focus {
   background-color: var(--theme);
 }
 
+.theme-bg.active {
+  background-color: #5e7bd1 !important;
+}
+
 .theme-border-y {
   border: 1px solid var(--theme);
   border-left: transparent;
@@ -11312,3 +11316,6 @@ hr.flaired-edges:before { /* Not really supposed to work, but does */
 
 /* Changed 1789 line */
 
+.border-theme {
+  border: 1px solid var(--theme) !important;
+}
