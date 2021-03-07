@@ -1,27 +1,29 @@
-<div class="container col-md-8">
+<div class="container">
     <div class="row justify-content-start mt-3">
-        <div class="col">
+        <div class="col-md-8">
             <div class="h1">Investment Status</div>
         </div>
     </div>
+</div>
 
+<div class="container">
     <div class="row theme-border-y py-4 mt-4">
         {{!-- <div class="col-sm-1 p-0" style="max-width: 45px;"> --}}
         <div class="col-sm-1 left-tabs-container">
             <ul class="nav nav-tabs left-tabs sideways-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#transfer" data-toggle="tab">Transfer</a>
+                    <a class="nav-link theme-bg text-white active" href="#transfer" data-toggle="tab">Transfer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#trades" data-toggle="tab">Trades</a>
+                    <a class="nav-link theme-bg text-white" href="#trades" data-toggle="tab">Trades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#performance" data-toggle="tab">Performance</a>
+                    <a class="nav-link theme-bg text-white" href="#performance" data-toggle="tab">Performance</a>
                 </li>
             </ul>
         </div>
 
-        <div class="col-md-11 p-0 border rounded">
+        <div class="col-md-11 p-0 border-theme rounded">
             <div class="tab-content">
                 <div class="tab-pane fade show container active" id="transfer">
                     <div class="row justify-content-between">
@@ -176,7 +178,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="tab-pane fade show container" id="performance">
@@ -184,7 +185,9 @@
                         ...
                     </script>
 
-                    <div id="chart_div" class="overflow-auto border rounded"></div>
+                    <div class="overflow-auto p-3" align="center">
+                        <div id="chart_div" class="d-inline-block shadow border rounded"></div>
+                    </div>
                 </div>
             </div>
         </div>
