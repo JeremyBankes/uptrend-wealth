@@ -1786,7 +1786,7 @@ pre code {
 }
 
 .table thead th {
-  vertical-align: bottom;
+  vertical-align: middle;
   border-bottom: 2px solid #dee2e6;
 }
 
@@ -10916,7 +10916,8 @@ a.text-dark:focus {
 }
 
 .img-intro {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   height: 550px;
   width: 100%;
   max-width: 1980px;
@@ -11065,12 +11066,8 @@ a.text-dark:focus {
 
 .inline-img-2 {
   float: left;
-  width: 15%;
+  max-width: 100px;
   height: auto;
-}
-
-.inline-p-2 {
-  float: none;
 }
 
 .theme-shadow-sm {
@@ -11079,6 +11076,14 @@ a.text-dark:focus {
 
 .theme-fg {
   color: var(--theme);
+}
+
+.theme-bg {
+  background-color: var(--theme);
+}
+
+.theme-bg.active {
+  background-color: #5e7bd1 !important;
 }
 
 .theme-border-y {
@@ -11232,4 +11237,85 @@ a.text-dark:focus {
 a.btn-no-left-radius.disabled,
 fieldset:disabled a.btn-no-left-radius {
   pointer-events: none;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+hr.flaired-edges {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+  color: var(--theme);
+}
+hr.flaired-edges:before { /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+  color: var(--theme);
+}
+
+.paragraph {
+  min-width: 250px;
+}
+
+.quote-paragraph {
+  min-width: 170px;
+}
+
+@media (max-width: 471px) {
+  .unordered-list {
+    padding-left: inherit;
+  }
+}
+
+@media (max-width: 361px) {
+  .list-no-bullet {
+    padding-left: initial;
+  }
+}
+
+.input-group {
+  min-width: 127px;
+}
+
+.login-card {
+  min-width: 248px;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+.scrollbar-progress-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  padding: 0;
+  z-index: 1;
+}
+
+.scrollbar-progress {
+  height: 5px;
+  background-color: var(--theme);
+  width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Changed 1789 line */
+
+.border-theme {
+  border: 1px solid var(--theme) !important;
 }

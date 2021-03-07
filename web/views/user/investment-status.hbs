@@ -1,81 +1,193 @@
-<div class="container col-md-8">
+<div class="container">
     <div class="row justify-content-start mt-3">
-        <div class="h1">Investment Status</div>
+        <div class="col-md-8">
+            <div class="h1">Investment Status</div>
+        </div>
     </div>
+</div>
 
+<div class="container">
     <div class="row theme-border-y py-4 mt-4">
-        <div class="col-md-1">
+        {{!-- <div class="col-sm-1 p-0" style="max-width: 45px;"> --}}
+        <div class="col-sm-1 left-tabs-container">
             <ul class="nav nav-tabs left-tabs sideways-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#transfer" data-toggle="tab">Transfer</a>
+                    <a class="nav-link theme-bg text-white active" href="#transfer" data-toggle="tab">Transfer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#trades" data-toggle="tab">Trades</a>
+                    <a class="nav-link theme-bg text-white" href="#trades" data-toggle="tab">Trades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="#performance"
-                        data-toggle="tab"
-                        title="Performance">Performance</a>
+                    <a class="nav-link theme-bg text-white" href="#performance" data-toggle="tab">Performance</a>
                 </li>
             </ul>
         </div>
 
-        <div class="col-md-11">
-            <div class="container">
-                <div class="tab-content">
-                    <article class="tab-pane container active" id="transfer">
-                        <h1>Transfer</h1>
-                        <section>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Pulvinar mattis nunc sed blandit libero volutpat sed cras ornare. Diam vulputate
-                            ut pharetra sit amet. Orci ac auctor augue mauris augue neque. Turpis massa sed elementum tempus
-                            egestas. Faucibus ornare suspendisse sed nisi. Ipsum nunc aliquet bibendum enim facilisis gravida
-                            neque convallis a. Pretium fusce id velit ut tortor pretium viverra. Egestas sed tempus urna et
-                            pharetra. Pellentesque adipiscing commodo elit at imperdiet dui. Posuere urna nec tincidunt praesent
-                            semper. Erat velit scelerisque in dictum non consectetur a erat. Scelerisque viverra mauris in
-                            aliquam. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Consectetur lorem donec massa
-                            sapien faucibus et molestie.
-                        </section>
-                    </article>
-                        <article class="tab-pane container" id="trades">
-                        <h1>Trades</h1>
-                        <section>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. A lacus vestibulum sed arcu. Mi tempus imperdiet nulla malesuada pellentesque.
-                            Natoque penatibus et magnis dis parturient. Rhoncus aenean vel elit scelerisque mauris pellentesque.
-                            In hendrerit gravida rutrum quisque non tellus orci ac. Lectus magna fringilla urna porttitor rhoncus
-                            dolor. At tempor commodo ullamcorper a lacus vestibulum sed arcu. Senectus et netus et malesuada fames
-                            ac. Diam quis enim lobortis scelerisque fermentum. Praesent tristique magna sit amet purus gravida
-                            quis. Elit eget gravida cum sociis natoque penatibus et magnis. Nibh praesent tristique magna sit amet
-                            purus gravida. Cursus vitae congue mauris rhoncus. Id leo in vitae turpis massa. Blandit libero
-                            volutpat sed cras. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.
-                        </section>
-                    </article>
-                    <article class="tab-pane container" id="performance">
-                        <h1>Performance</h1>
-                        <section>
-                            <p><small>From Wikipedia, the free encyclopedia</small></p>
-                        </section>
-                        <section>
-                            <p>
-                                Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch (pronounced
-                                [ˌɬanvair­pʊɬˌɡwɨ̞ŋɡɨ̞ɬ­ɡɔˌɡɛrə­ˌχwərn­ˌdrɔbʊɬ­ˌɬan­təˌsɪljɔ­ˌɡɔɡɔ­ˈɡoːχ] in Welsh), official short
-                                form name Llanfairpwllgwyngyll (pronounced [ɬanˌvair puɬˈɡwɨ̞nɡɨ̞ɬ]), also spelled Llanfair
-                                Pwllgwyngyll, is a large village and local government community on the island of Anglesey in Wales.
-                                It is situated on the Menai Strait next to the Britannia Bridge and across the strait from Bangor.
-                                While the official short form name is used in official contexts, both the full name and shortened
-                                (Llanfairpwll or Llanfair PG) forms of the place name are used in various contexts.
-                            </p>
-                            <p>
-                                <a href="https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll"
-                                    target="_blank"
-                                    title="Open Wikipedia article in a new tab."
-                                    >Full article &gt;</a
-                                >
-                            </p>
-                        </section>
-                    </article>
+        <div class="col-md-11 p-0 border-theme rounded">
+            <div class="tab-content">
+                <div class="tab-pane fade show container active" id="transfer">
+                    <div class="row justify-content-between">
+                        <div class="col-md-5 pb-5">
+                            <div class="h4 text-center">Contributions</div>
+                            <table id="contributions" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-top-0">Date</th>
+                                        <th scope="col" class="border-top-0 border-left border-right">Amount (USD)</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td class="border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-right border-top-0 border-bottom-0 text-center text-success">+ $304</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-right border-top-0 border-bottom-0 text-center text-success">+ $400</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-right border-top-0 border-bottom-0 text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-right border-top-0 border-bottom-0 text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-right border-top-0 border-bottom-0 text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="border-top border-bottom-0">Total</th>
+                                        <td class="border-left border-right border-top border-bottom-0 text-center text-success">+ $704</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="h4 text-center">Withdrawals</div>
+                            <table id="withdrawals" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-left border-top-0">Date</th>
+                                        <th scope="col" class="border-top-0 border-left">Amount (USD)</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td class="border-left border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-top-0 border-bottom-0 text-center text-danger">- $400</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-left border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-top-0 border-bottom-0 text-center text-danger">- $0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-left border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-top-0 border-bottom-0 text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-left border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-top-0 border-bottom-0 text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-left border-top-0 border-bottom-0"></td>
+                                        <td class="border-left border-top-0 border-bottom-0 text-center"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="border-left border-top border-bottom-0">Total</th>
+                                        <td class="border-left border-top border-bottom-0 text-center text-danger">- $400</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show container" id="trades">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="current-tab" data-toggle="tab" href="#current" role="tab" aria-controls="current" aria-selected="true">Current</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="true">Past</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content border border-top-0">
+                        <div class="tab-pane fade show active" id="current" role="tabpanel" aria-labelledby="current-tab">
+                            <div class="overflow-auto">
+                                <table id="current" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Entry Date</th>
+                                            <th>Trade Pair</th>
+                                            <th>Direction</th>
+                                            <th>Entry Price</th>
+                                            <th>Current Price</th>
+                                            <th>Current P/L</th>
+                                            <th>Trade ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
+                            <div class="overflow-auto">
+                                <table id="current" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Entry Date</th>
+                                            <th>Trade Pair</th>
+                                            <th>Direction</th>
+                                            <th>Entry Price</th>
+                                            <th>Current Price</th>
+                                            <th>Current P/L</th>
+                                            <th>P/L</th>
+                                            <th>Exit Price</th>
+                                            <th>Exit Date</th>
+                                            <th>Trade ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show container" id="performance">
+                    <script>
+                        ...
+                    </script>
+
+                    <div class="overflow-auto p-3" align="center">
+                        <div id="chart_div" class="d-inline-block shadow border rounded"></div>
+                    </div>
                 </div>
             </div>
         </div>
