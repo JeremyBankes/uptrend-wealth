@@ -10921,8 +10921,10 @@ a.text-dark:focus {
   height: 550px;
   width: 100%;
   max-width: 1980px;
-  background: url('/images/pexels-nataliya-vaitkevich-6120185.jpg');
+  /* Photo by Anna Nekrashevich from Pexels */
+  background: url('/images/pexels-anna-nekrashevich-6801648.jpg');
   background-repeat: no-repeat;
+  background-position:center;
   background-size: cover;
 }
 
@@ -11249,7 +11251,8 @@ hr.flaired-edges {
   border-radius: 20px;
   color: var(--theme);
 }
-hr.flaired-edges:before { /* Not really supposed to work, but does */
+/* Not really supposed to work, but does */
+hr.flaired-edges:before { 
   display: block;
   content: "";
   height: 30px;
