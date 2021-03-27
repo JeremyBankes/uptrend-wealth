@@ -13,8 +13,8 @@ function drawChart() {
     ]);
 
     const dataTable = new google.visualization.DataTable();
-    dataTable.addColumn({type: 'string', 'id': 'Year'});
-    dataTable.addColumn({type: 'number', 'id': 'Sales'});
+    dataTable.addColumn({'type': 'string', 'id': 'Year'});
+    dataTable.addColumn({'type': 'number', 'id': 'Sales'});
     dataTable.addRows([
         ['2004', 2000],
         ['2005', 4000],
