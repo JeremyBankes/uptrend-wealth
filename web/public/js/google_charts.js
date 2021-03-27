@@ -61,6 +61,9 @@ function drawChart() {
     };
 
     // CREATE AND DRAW THE CHART
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(dataTable, options);
+    let individualChart = new google.visualization.LineChart(document.getElementById('individual-tab-chart'));
+    individualChart.draw(dataTable, options);
+
+    let fundChart = new google.visualization.LineChart(document.getElementById('fund-tab-chart'));
+    fundChart.draw(dataTable, options);
 }
