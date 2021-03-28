@@ -56,8 +56,8 @@ function drawChart() {
                 italic: false,
             },
         },
-        height: 550,
-        width: 900,
+        height: 400,
+        width: 600,
     };
 
     // CREATE AND DRAW THE CHART
