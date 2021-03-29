@@ -1,4 +1,8 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', async () => {
+    await scrollbarAnimation();
+});
+
+async function scrollbarAnimation() {
     let scrollbar = document.querySelector('.scrollbar-progress');
 
     window.addEventListener('scroll', function(e) {
@@ -12,4 +16,4 @@ window.addEventListener('load', function() {
         else
             scrollbar.classList.remove('d-none');
     });
-});
+}

@@ -282,7 +282,7 @@
         max-width: 44px !important;
     }
 
-    @media(max-width: 809px) {
+    @media(max-width: 767px) {
         .left-tabs-container {
             padding-left: 1.5rem !important;
             max-width: 100% !important;

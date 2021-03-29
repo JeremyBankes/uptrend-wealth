@@ -6,25 +6,26 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container col-lg-8">
     <div class="row theme-border-y py-4 mt-4">
         {{!-- <div class="col-sm-1 p-0" style="max-width: 45px;"> --}}
         <div class="col-sm-1 left-tabs-container">
             <ul class="nav nav-tabs left-tabs sideways-tabs">
                 <li class="nav-item">
-                    <a class="nav-link theme-bg text-white active" href="#transfer" data-toggle="tab">Transfer</a>
+                    <a class="nav-link theme-bg text-white active" href="#transfer" data-mdb-toggle="tab">Transfer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link theme-bg text-white" href="#trades" data-toggle="tab">Trades</a>
+                    <a class="nav-link theme-bg text-white" href="#trades" data-mdb-toggle="tab">Trades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link theme-bg text-white" href="#performance" data-toggle="tab">Performance</a>
+                    <a class="nav-link theme-bg text-white" href="#performance" 
+                        data-mdb-toggle="tab" title="Performance">Performance</a>
                 </li>
             </ul>
         </div>
 
         <div class="col-md-11 p-0 border-theme rounded">
-            <div class="tab-content">
+            <div class="tab-content my-2">
                 <div class="tab-pane fade show container active" id="transfer">
                     <div class="row justify-content-between">
                         <div class="col-md-5 pb-5">
@@ -110,10 +111,10 @@
                 <div class="tab-pane fade show container" id="trades">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="current-tab" data-toggle="tab" href="#current" role="tab" aria-controls="current" aria-selected="true">Current</a>
+                            <a class="nav-link active" id="current-tab" data-mdb-toggle="tab" href="#current" role="tab" aria-controls="current" aria-selected="true">Current</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="true">Past</a>
+                            <a class="nav-link" id="past-tab" data-mdb-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="true">Past</a>
                         </li>
                     </ul>
 
@@ -150,7 +151,7 @@
                             <div class="overflow-auto">
                                 <table id="current" class="table">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center align-middle">
                                             <th>Entry Date</th>
                                             <th>Trade Pair</th>
                                             <th>Direction</th>
@@ -165,13 +166,13 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                         </tr>
                                         <tr>
-                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                         </tr>
                                         <tr>
-                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -181,12 +182,76 @@
                 </div>
 
                 <div class="tab-pane fade show container" id="performance">
-                    <script>
+                    {{!-- <script>
                         ...
-                    </script>
+                    </script> --}}
 
-                    <div class="overflow-auto p-3" align="center">
-                        <div id="chart_div" class="d-inline-block shadow border rounded"></div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="individual-tab" data-mdb-toggle="tab" href="#individual" role="tab" aria-controls="individual" aria-selected="true">Individual</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="fund-tab" data-mdb-toggle="tab" href="#fund" role="tab" aria-controls="fund" aria-selected="true">Fund</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content border border-top-0">
+                        <div class="tab-pane fade show active" id="individual" role="tabpanel" aria-labelledby="individual-tab">
+                            <div class="overflow-auto p-3" align="center">
+                                <div id="individual-tab-chart" class="d-inline-block shadow border rounded"></div>
+                            </div>
+
+                            <div class="overflow-auto mt-5">
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Balance</th>
+                                            <th>Unrealize</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-success">$ 1400</td>
+                                            <td class="text-danger">- $100</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <a class="btn btn-secondary" href="#">Download Report</a>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="fund" role="tabpanel" aria-labelledby="fund-tab">
+                            <div class="overflow-auto p-3" align="center">
+                                <div id="fund-tab-chart" class="d-inline-block shadow border rounded"></div>
+                            </div>
+
+                            <div class="overflow-auto mt-5">
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Balance</th>
+                                            <th>Unrealize</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-success">$ 2700</td>
+                                            <td class="text-danger">- $400</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <a class="btn btn-secondary" href="#">Download Report</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
