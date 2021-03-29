@@ -44,9 +44,9 @@
                 </ul>
                 
                 <div>
-                    <a class="social-icon" href="https://www.fb.com"><i class="fab fa-facebook"></i></a>
-                    <a class="social-icon" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a class="social-icon" href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+                    <a class="btn btn-theme btn-floating zoom" href="https://www.fb.com"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-theme btn-floating zoom" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-theme btn-floating zoom" href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
@@ -55,57 +55,43 @@
         <div class="col-lg-5">
             <div class="h3">Send us a message!</div>
             <form class="mt-3" action="#" method="POST">
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input name="" class="form-control" placeholder="First name" type="text">
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input name="" class="form-control" placeholder="Last name" type="text">
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                    </div>
-                    <input name="" class="form-control" placeholder="Email address" type="email">
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                    </div>
-                    <select class="custom-select" style="max-width: 120px;">
-                        <option selected="">+902</option>
+                <div class="form-outline mb-3">
+                    <input name="" id="firstName" class="form-control rounded" type="text" required>
+                    <label for="firstName" class="form-label">First name</label>
+                </div>
+                <div class="form-outline mb-3">
+                    <input name="" id="lastName" class="form-control rounded" type="text" required>
+                    <label for="lastName" class="form-label">Last name</label>
+                </div>
+                <div class="form-outline mb-3">
+                    <input name="" id="email" class="form-control rounded" type="email" required>
+                    <label for="email" class="form-label">Email address</label>
+                </div>
+                <div class="input-group mb-3">
+                    <select class="form-select form-select-sm">
+                        <option selected>+902</option>
                         <option value="1">+972</option>
                         <option value="2">+198</option>
                         <option value="3">+701</option>
                     </select>
-                    <input name="" class="form-control" placeholder="Phone number" type="text">
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-globe"></i> </span>
+                    <div class="form-outline">
+                        <input name="" id="phoneNumber" class="form-control rounded" type="tel" required>
+                        <label for="phoneNumber" class="form-label">Phone number</label>
                     </div>
-                    <select class="custom-select">
-                        <option value="null" selected disabled>Country</option>
-                        <option value="Canada">Canada</option>
-                        <option value="USA">USA</option>
-                        <option value="UK">UK</option>
-                    </select>
-                </div> <!-- form-group// -->
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-comment"></i></span>
-                    </div>
-                    <textarea class="form-control" name="comment" id="comment" rows="5"
-                        placeholder="Write your message here..."></textarea>
-                </div> <!-- form-group// -->
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-block form-control" value="Submit">
-                </div> <!-- form-group// -->
+                </div>
+                <select class="form-select mb-3">
+                    <option value="null" selected disabled>Country</option>
+                    <option value="Canada">Canada</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                </select>
+                <div class="form-outline mb-3">
+                    <textarea name="" id="comment" class="form-control rounded" rows="5"></textarea>
+                    <label for="comment" class="form-label">Comments</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block form-control">
+                    Send  <i class="fas fa-paper-plane"></i>
+                </button>
             </form>
         </div>
     </div>

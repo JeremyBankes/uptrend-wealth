@@ -13,8 +13,8 @@ function drawChart() {
     ]);
 
     const dataTable = new google.visualization.DataTable();
-    dataTable.addColumn({type: 'string', 'id': 'Year'});
-    dataTable.addColumn({type: 'number', 'id': 'Sales'});
+    dataTable.addColumn({'type': 'string', 'id': 'Year'});
+    dataTable.addColumn({'type': 'number', 'id': 'Sales'});
     dataTable.addRows([
         ['2004', 2000],
         ['2005', 4000],
@@ -56,11 +56,14 @@ function drawChart() {
                 italic: false,
             },
         },
-        height: 550,
-        width: 900,
+        height: 400,
+        width: 600,
     };
 
     // CREATE AND DRAW THE CHART
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(dataTable, options);
+    let individualChart = new google.visualization.LineChart(document.getElementById('individual-tab-chart'));
+    individualChart.draw(dataTable, options);
+
+    let fundChart = new google.visualization.LineChart(document.getElementById('fund-tab-chart'));
+    fundChart.draw(dataTable, options);
 }
