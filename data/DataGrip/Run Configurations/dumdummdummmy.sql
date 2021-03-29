@@ -35,3 +35,12 @@ SELECT * FROM Address;
 SELECT * FROM Account;
 SELECT * FROM Trade;
 SELECT * FROM Claim;
+
+-- Get Transfer
+CALL GetTransfer(@UserId, '2018-07-10 02:55:05', '2020-03-10 02:55:05', 1);
+
+CALL CreateTransfer(2000, 10, CURDATE(), @TransferId);
+CALL CreateTransfer(100, 10, CURDATE(), @TransferId);
+CALL CreateTransfer(500, 10, CURDATE(), @TransferId);
+
+CALL Balance()
