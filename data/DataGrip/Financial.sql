@@ -101,9 +101,9 @@ CREATE OR REPLACE PROCEDURE GetTrades(
 BEGIN
 
 END;
-
-CREATE OR REPLACE PROCEDURE UserInformation(
-    IN UserId INT,
-    IN StartDate DATETIME,
-    IN EndDate DATETIME
-)
+#
+# CREATE OR REPLACE PROCEDURE UserInformation(
+#     IN UserId INT,
+#     IN StartDate DATETIME,
+#     IN EndDate DATETIME
+# )

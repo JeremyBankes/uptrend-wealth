@@ -43,4 +43,4 @@ CALL CreateTransfer(2000, 10, CURDATE(), @TransferId);
 CALL CreateTransfer(100, 10, CURDATE(), @TransferId);
 CALL CreateTransfer(500, 10, CURDATE(), @TransferId);
 
-CALL Balance()
+# CALL Balance()
