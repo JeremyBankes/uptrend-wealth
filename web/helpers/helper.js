@@ -8,4 +8,7 @@ module.exports = {
     lower: function (input) {
         return input.toLowerCase();
     },
+    sticky: function (input) {
+        return `value="${input}"`;
+    }
 }
