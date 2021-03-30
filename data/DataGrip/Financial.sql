@@ -77,7 +77,7 @@ ELSE
 END IF;
 END;
 
-CREATE OR REPLACE PROCEDURE Balance(
+CREATE OR REPLACE PROCEDURE GetBalance(
     IN UserId INT
 )
 BEGIN
@@ -99,11 +99,9 @@ CREATE OR REPLACE PROCEDURE GetTrades(
     IN EndDate DATETIME
 )
 BEGIN
-
+    SELECT User.Id, EntryTime FROM Trade
+    INNER JOIN Claim ON Trade.Id = Claim.TradeId
+    INNER JOIN Account ON Claim.AccountId = Account.Id
+    INNER JOIN User ON Account.Id = User.AccountId
+    WHERE EntryTime >= @StartDate AND EntryTime <= @EndDate;
 END;
-#
-# CREATE OR REPLACE PROCEDURE UserInformation(
-#     IN UserId INT,
-#     IN StartDate DATETIME,
-#     IN EndDate DATETIME
-# )
