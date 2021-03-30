@@ -8,23 +8,25 @@ Source: https://bootsnipp.com/snippets/z8699
         <div class="col-md-5 mt-3">
             <div class="h3 text-center mt-5">Create Account</div>
             <p class="text-center">Get started with {{ _brand }}</p>
-
             <div class="card mt-3">
                 <div class="card-body">
+                    <ul class="card">
+                        {{#each errors}}<li>{{this.message}}</li>{{/each}}
+                    </ul>
                     <form action="/user/create" method="post">
                         <h5 class="mb-3 text-center">Contact</h5>
                         <div class="input-group justify-content-between">
                             <div class="form-outline mb-3">
-                                <input name="" id="firstName" class="form-control" type="text" required>
+                                <input name="firstName" id="firstName" class="form-control" type="text" required {{{sticky input.firstName}}}>
                                 <label for="firstName" class="form-label">First name</label>
                             </div>
                             <div class="form-outline mb-3">
-                                <input name="" id="lastName" class="form-control" type="text" required>
+                                <input name="lastName" id="lastName" class="form-control" type="text" required {{{sticky input.lastName}}}>
                                 <label for="lastName" class="form-label">Last name</label>
                             </div>
                         </div>
                         <div class="form-outline mb-3">
-                            <input name="" id="email" class="form-control" type="email" required>
+                            <input name="email" id="email" class="form-control" type="email" required {{{sticky input.email}}}>
                             <label for="email" class="form-label">Email address</label>
                         </div>
                         <div class="input-group mb-3">
@@ -35,42 +37,43 @@ Source: https://bootsnipp.com/snippets/z8699
                                 <option value="3">+701</option>
                             </select>
                             <div class="form-outline">
-                                <input name="" id="phoneNumber" class="form-control rounded" type="tel" required>
+                                <input name="phoneNumber" id="phoneNumber" class="form-control rounded" type="tel"
+                                    required {{{sticky input.phoneNumber}}}>
                                 <label for="phoneNumber" class="form-label">Phone number</label>
                             </div>
                         </div>
                         <hr>
                         <h5 class="mb-3 text-center">Address</h5>
                         <div class="form-outline mb-3">
-                            <input name="" id="streetAddress" class="form-control" type="text" required>
+                            <input name="streetAddress" id="streetAddress" class="form-control" type="text" required {{{sticky input.streetAddress}}}>
                             <label for="streetAddress" class="form-label">Street address</label>
                         </div>
                         <div class="form-outline mb-3">
-                            <input name="" id="city" class="form-control" type="text" required>
+                            <input name="city" id="city" class="form-control" type="text" required {{{sticky input.city}}}>
                             <label for="city" class="form-label">City</label>
                         </div>
                         <div class="form-outline mb-3">
-                            <input name="" id="country" class="form-control" type="text" required>
+                            <input name="country" id="country" class="form-control" type="text" required {{{sticky input.country}}}>
                             <label for="country" class="form-label">Country</label>
                         </div>
                         <div class="input-group justify-content-between">
                             <div class="form-outline mb-3">
-                                <input name="" id="state" class="form-control" type="text" required>
+                                <input name="state" id="state" class="form-control" type="text" required {{{sticky input.state}}}>
                                 <label for="state" class="form-label">State</label>
                             </div>
                             <div class="form-outline mb-3">
-                                <input name="" id="zipCode" class="form-control" type="text" required>
+                                <input name="zipCode" id="zipCode" class="form-control" type="text" required {{{sticky input.zipCode}}}>
                                 <label for="zipCode" class="form-label">ZIP Code</label>
                             </div>
                         </div>
                         <hr>
                         <h5 class="mb-3 text-center">Password</h5>
                         <div class="form-outline mb-3">
-                            <input name="" id="password" class="form-control" type="password" required>
+                            <input name="password" id="password" class="form-control" type="password" required>
                             <label for="password" class="form-label">Password</label>
                         </div>
                         <div class="form-outline mb-3">
-                            <input name="" id="confirmPassword" class="form-control" type="password" required>
+                            <input name="confirmPassword" id="confirmPassword" class="form-control" type="password" required>
                             <label for="confirmPassword" class="form-label">Confirm password</label>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block my-4">Create Account</button>

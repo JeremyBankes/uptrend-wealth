@@ -5,12 +5,6 @@
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://2.tcp.ngrok.io:17343</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="@6.tcp.ngrok.io" uuid="62af2cad-d950-4c52-bb9b-bced95492834">
-      <driver-ref>mariadb</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://6.tcp.ngrok.io:11597</jdbc-url>
     </data-source>
   </component>
