@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5 my-5 shadow-lg">
+            <h3 class="text-center mt-4">Login to Uptrend Wealth</h3>
+
+            <div class="card mt-3">
+                <ul id="messages" class="list-group">
+                    {{#each messages}}<li class="list-group-item">{{this}}</li>{{/each}}
+                </ul>
+                <div class="card-body">
+                    <form action="/login" method="POST">
+                        <div class="form-outline mb-2">
+                            <input id="email" name="email" class="form-control" type="email" required {{{sticky input.email}}}>
+                            <label class="form-label" for="email">Email</label>
+                        </div>
+                        <div class="form-outline mb-2">
+                            <input id="password" name="password" class="form-control" type="password" required>
+                            <label class="form-label" for="password">Password</label>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col d-flex justify-content-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="remember" checked>
+                                    <label class="form-check-label" for="remember"> Remember me </label>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-dark">Login</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links my-2">
+                        Don't have an account?<a class="ms-1" href="/register">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

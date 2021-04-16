@@ -1,0 +1,82 @@
+<div class="container mb-6">
+    <div class="row justify-content-center">
+        <div class="col-md-5 my-5 shadow-lg">
+            <h3 class="text-center mt-4">Create an Account</h3>
+            <p class="text-center">Get started with Uptrend</p>
+            <div class="card mt-3">
+                <ul id="messages" class="list-group">
+                    {{#each messages}}<li class="list-group-item">{{this}}</li>{{/each}}
+                </ul>
+                <div class="card-body">
+                    <form action="/register" method="POST">
+                        <h5 class="text-center">Contact Information</h5>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input class="form-control" type="text" id="firstName" name="firstName" {{{sticky input.firstName}}} />
+                                    <label class="form-label" for="firstName">First name</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input class="form-control" type="text" id="lastName" name="lastName" {{{sticky input.lastName}}} />
+                                    <label class="form-label" for="lastName">Last name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-2">
+                            <input class="form-control" type="text" id="email" name="email" {{{sticky input.email}}} />
+                            <label class="form-label" for="email">Email Address</label>
+                        </div>
+                        <div class="form-outline mb-2">
+                            <input class="form-control" type="text" id="phone" name="phone" {{{sticky input.phone}}}/>
+                            <label class="form-label" for="phone">Phone Number</label>
+                        </div>
+                        <hr>
+                        <h5 class="text-center">Address</h5>
+                        <div class="form-outline mb-2">
+                            <input class="form-control" type="text" id="street" name="street" {{{sticky input.street}}} />
+                            <label class="form-label" for="street">Street Address</label>
+                        </div>
+                        <div class="form-outline mb-2">
+                            <input class="form-control" type="text" id="city" name="city" {{{sticky input.city}}} />
+                            <label class="form-label" for="city">City</label>
+                        </div>
+                        <select class="form-select mb-2" id="countryId" name="countryId">
+                            <option selected disabled hidden>Country</option>
+                            {{#each countries}}<option value="{{this.id}}">{{this.name}}</option>{{/each}}
+                        </select>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input class="form-control" type="text" id="state" name="state" {{{sticky input.state}}} />
+                                    <label class="form-label" for="state">State/Province</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                    <input class="form-control" type="text" id="postal" name="postal" {{{sticky input.postal}}} />
+                                    <label class="form-label" for="postal">ZIP/Postal Code</label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5 class="text-center">Password</h5>
+                        <div class="form-outline mb-2">
+                            <input class="form-control" type="text" id="password" name="password" />
+                            <label class="form-label" for="password">Password</label>
+                        </div>
+                        <div class="form-outline mb-2">
+                            <input class="form-control" type="text" id="confirm" name="confirm" />
+                            <label class="form-label" for="confirm">Confirm Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-block mb-4">Create Account</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p class="text-center my-3">Have an account? <a href="/login">Login</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

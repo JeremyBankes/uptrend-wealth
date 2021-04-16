@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- Material Design Bootstrap 5 --}}
+    <link rel="stylesheet" href="/mdb5/css/mdb.min.css">
+
+    {{#each scripts}}
+    <script src="{{this}}"></script>
+    {{/each}}
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img class="me-2" src="/images/icon.svg" alt="Uptrend Icon" width="72" height="72">
+                    <strong class="fs-2">UPTREND WEALTH</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navigation" aria-controls="navigation"
+                    aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {{#if active.landing}}active{{/if}}" href="/landing">Landing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{#if active.about}}active{{/if}}" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{#if active.contact}}active{{/if}}" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        {{#if userId}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/investment">Investment Status</a>
+                        </li>
+                        <li class="border-end m-2"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link {{#if active.login}}active{{/if}}" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{#if active.register}}active{{/if}}" href="/register">Register</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-shrink-0">
+        {{{body}}}
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <img class="mb-2" src="/images/icon.svg" alt="Uptrend Icon" width="96" height="96">
+                    <small class="d-block mb-3 text-muted">© Uptrend Wealth 2021</small>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1"><a class="link-primary text-decoration-none" href="/landing">Landing</a></li>
+                        <li class="mb-1"><a class="link-primary text-decoration-none" href="/about">About</a></li>
+                        <li class="mb-1"><a class="link-primary text-decoration-none" href="/contact">Contact</a></li>
+                        <li class="mb-1"><a class="link-primary text-decoration-none" href="/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1">contact@email.com</li>
+                        <li class="mb-1">(123) 456 7890</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1"><a class="link-primary text-decoration-none" href="#">Privacy Policy</a></li>
+                        <li class="mb-1"><a class="link-primary text-decoration-none" href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/mdb5/js/mdb.min.js"></script>
+</body>
+
+</html>

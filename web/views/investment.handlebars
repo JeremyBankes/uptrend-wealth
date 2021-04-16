@@ -1,0 +1,236 @@
+<div class="container">
+    <h3 class="text-center mt-4">Investment Status</h3>
+
+    <!-- Tabs navs -->
+    <ul class="nav nav-tabs mb-3" id="investment" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="transfers-tab" data-mdb-toggle="tab" href="#transfers" role="tab" aria-controls="transfers"
+                aria-selected="true">Transfers</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="trades-tab" data-mdb-toggle="tab" href="#trades" role="tab" aria-controls="trades" aria-selected="false">Trades</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="performance-tab" data-mdb-toggle="tab" href="#performance" role="tab" aria-controls="performance"
+                aria-selected="false">Performance</a>
+        </li>
+    </ul>
+    <!-- Tabs navs -->
+
+    <!-- Tabs content -->
+    <div class="tab-content" id="investment-content">
+        <div class="tab-pane fade show active" id="transfers" role="tabpanel" aria-labelledby="transfers-tab">
+            <h3>Transfers</h3>
+            <hr>
+            <div class="d-flex">
+                <div class="col m-2">
+                    <h5>Contributions</h5>
+                    <table class="table table-responsive table-striped table-sm">
+                        <thead>
+                            <tr class="table-dark">
+                                <th scope="col">Date</th>
+                                <th scope="col">Amount (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each contributions}}
+                            <tr>
+                                <th scope="row">{{this.date}}</th>
+                                <td>{{this.amount}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                        <tfoot>
+                            <tr class="table-dark">
+                                <td>Total</td>
+                                <td>{{totalContribution}}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="col m-2">
+                    <h5>Withdrawals</h5>
+                    <table class="table table-responsive table-striped table-sm">
+                        <thead>
+                            <tr class="table-dark">
+                                <th scope="col">Date</th>
+                                <th scope="col">Amount (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each withdrawals}}
+                            <tr>
+                                <th scope="row">{{this.date}}</th>
+                                <td>{{this.amount}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                        <tfoot>
+                            <tr class="table-dark">
+                                <td>Total</td>
+                                <td>{{totalWithdrawal}}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="trades" role="tabpanel" aria-labelledby="trades-tab">
+            <h3>Trades</h3>
+            <hr>
+            <ul class="nav nav-pills mb-3" id="trades-pills" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="trades-current-pill" data-mdb-toggle="pill" href="#trades-current" role="tab" aria-controls="trades-current"
+                        aria-selected="true">Current</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="trades-past-pill" data-mdb-toggle="pill" href="#trades-past" role="tab" aria-controls="trades-past"
+                        aria-selected="false">Past</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="trades-content">
+                <div class="tab-pane fade show active" id="trades-current" role="tabpanel" aria-labelledby="trades-current-pill">
+                    <table class="table table-responsive table-striped table-sm">
+                        <thead>
+                            <tr class="table-dark">
+                                <th scope="col">Trade Id</th>
+                                <th scope="col">Entry Date</th>
+                                <th scope="col">Pair</th>
+                                <th scope="col">Direction</th>
+                                <th scope="col">Entry Price</th>
+                                <th scope="col">Current Price</th>
+                                <th scope="col">Current P/L</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each currentTrades}}
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.entryTime}}</td>
+                                <td>{{this.pair}}</td>
+                                <td>{{this.direction}}</td>
+                                <td>{{this.entryPrice}}</td>
+                                <td>UNIMPLEMENTED</td>
+                                <td>UNIMPLEMENTED</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="trades-past" role="tabpanel" aria-labelledby="trades-past-pill">
+                    <table class="table table-responsive table-striped table-sm">
+                        <thead>
+                            <tr class="table-dark">
+                                <th scope="col">Trade Id</th>
+                                <th scope="col">Entry Date</th>
+                                <th scope="col">Pair</th>
+                                <th scope="col">Direction</th>
+                                <th scope="col">Entry Price</th>
+                                <th scope="col">P/L</th>
+                                <th scope="col">Exit Price</th>
+                                <th scope="col">Exit Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each pastTrades}}
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.entryTime}}</td>
+                                <td>{{this.pair}}</td>
+                                <td>{{this.direction}}</td>
+                                <td>{{this.entryPrice}}</td>
+                                <td>{{this.profit}}</td>
+                                <td>{{this.exitPrice}}</td>
+                                <td>{{this.exitTime}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="performance" role="tabpanel" aria-labelledby="performance-tab">
+            <h3>Performance</h3>
+            <hr>
+            <ul class="nav nav-pills mb-3" id="performance-pills" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="performance-individual-pill" data-mdb-toggle="pill" href="#performance-individual" role="tab"
+                        aria-controls="performance-individual" aria-selected="true">Individual</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="performance-fund-pill" data-mdb-toggle="pill" href="#performance-fund" role="tab" aria-controls="performance-fund"
+                        aria-selected="false">Fund</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="performance-content">
+                <div class="tab-pane fade show active" id="performance-individual" role="tabpanel" aria-labelledby="performance-individual-pill">
+                    <h5 class="text-center">Individual Performance</h5>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6">
+                            <div id="individual-performance"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="performance-fund" role="tabpanel" aria-labelledby="performance-fund-pill">
+                    <h5 class="text-center">Fund Performance</h5>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6">
+                            <div id="fund-performance"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script>
+                    google.charts.load('current', { packages: ['corechart'] });
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+
+                        const options = {
+                            curveType: 'none',
+                            chartArea: { width: '90%', height: '90%' },
+                            animation: { startup: true, easing: 'in', duration: 500 },
+                            legend: { position: 'none' },
+                            explorer: { axis: 'horizontal' },
+                            vAxis: {
+                                title: 'Balance',
+                                titleTextStyle: {
+                                    color: '#660000',
+                                    italic: false,
+                                },
+                                format: 'currency',
+                            },
+                            hAxis: {
+                                title: 'Date',
+                                titleTextStyle: {
+                                    color: '#660000',
+                                    italic: false,
+                                },
+                            },
+                            height: 400,
+                            width: 800,
+                        };
+
+                        fetch('/performance').then(res => res.json()).then(res => {
+                            console.log(res);
+
+                            const display = (elementId, data) => {
+                                data = data.map(item => [new Date(item[0]), item[1]]);
+                                const dataTable = new google.visualization.DataTable();
+                                dataTable.addColumn({ 'type': 'date', 'id': 'date' });
+                                dataTable.addColumn({ 'type': 'number', 'id': 'balance' });
+                                dataTable.addRows(data);
+                                let chart = new google.visualization.LineChart(document.getElementById(elementId));
+                                chart.draw(dataTable, options);
+                            }
+
+                            display('fund-performance', res.fund);
+                            display('individual-performance', res.individual);
+                        });
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
